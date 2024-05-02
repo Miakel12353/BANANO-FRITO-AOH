@@ -1333,38 +1333,20 @@ local slcplr = TargetSection:NewDropdown("Options", "", dropdown, function(curre
 	spawn(function()
 		_G.tplayer = currentOption;
 		getgenv().confirm = true;
-	spawn(function()
-			while killplr do
-				task.wait();
-				task.wait();
-				task.wait();
-				task.wait();
-				task.wait();
-				task.wait();
-				spawn(function()
-					pcall(function()
-						for i, v in pairs(game.Workspace:GetChildren()) do
-							if ((v.Name == _G.tplayer) and v:FindFirstChild("Humanoid") and (v.Humanoid.Health > 0)) then
-								game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1);
-							end
-						end
-					end);
-				end);
+	spawn(functio
 				spawn(function()
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1); 
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-				end);
-				spawn(function()
-					local LookVector = game.Workspace.Camera.CFrame.LookVector;
-					game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
-					game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
-				end);
-				spawn(function()
-					if (killplr == false) then
-						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1); 
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 					end
 				end);
 			end
