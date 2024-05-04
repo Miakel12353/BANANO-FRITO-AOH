@@ -1222,6 +1222,25 @@ TargetSection:NewToggle("Kill Aura", "", function(state)
 		end);
 	end
 end);
+TargetSection:NewToggle("Eng infinite", "", function(state)
+	if state then
+		getgenv().Eng_inf = true;
+		spawn(function()
+function upgradeStatistic(stat, types, amount)
+    if stat == nil then return end
+    if types == nil then return end
+    if amount == nil then return end
+
+    if types == "default" then
+        upgradeEvent:InvokeServer(stat)
+    elseif types == "fast" then
+        for i = 1, amount do
+            task.spawn(function()
+                upgradeEvent:InvokeServer(stat)
+            end)
+        end
+    end 
+end
 TargetSection:NewToggle("Laser", "", function(state)
 	spawn(function()
 		if state then
