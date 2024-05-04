@@ -1208,16 +1208,10 @@ TargetSection:NewToggle("Kill Aura", "", function(state)
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 				end);
+				spawn(function()
+					if (killplr == false) then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
 					end
 				end);
 			end
