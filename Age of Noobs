@@ -1,4 +1,4 @@
-local Lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/IMRETARDED'))()
+local Lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
 local CategoryVariableHere= Lib:Category("Age Of Heros")
 CategoryVariableHere:Button("Rep farm Civilian -rep",function()
     
