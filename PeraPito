@@ -957,37 +957,36 @@ MSection:NewButton("Crash Pesado", "", function(state)
 	repeat
 		x += 1
 		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 500000 
+	until x == 60000 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-MSection:NewButton("Crash UltraPesado", "", function(state)
+MSection:NewButton("Crash ULTRAPESADO", "", function(state)
 	local x = 0;
 	repeat
-		x += 1
+		x += 2
 		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 800000 
+	until x == 80000 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-MSection:NewButton("Crash Dios", "", function(state)
 	local x = 0;
 	repeat
 		x += 1
 		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 9999999999 
+	until x == 70000 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-MSection:NewButton("Crash Ultra", "", function(state)
+MSection:NewButton("Crash Peligroso", "", function(state)
 	local x = 0;
 	repeat
-		x += 1
+		x += 3
 		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 999999999999999999 
+	until x == 99999 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
@@ -1000,6 +999,16 @@ MSection:NewButton("Server Crasher", "", function(state)
 	until x == 50000 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait(0.2);
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Crash Maldito", "", function(state)
+	local x = 0;
+	repeat
+		x += 8
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 99999  
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
 MSection:NewButton("Break Velocity", "", function()
