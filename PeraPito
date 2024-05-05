@@ -6,7 +6,7 @@
 🟨🟨🟨🟨🟨🟨
 
 
-Made By Pajeros                                                
+Made By BANANO                                                  
 Open Source :D      
 
 ToDo List {
@@ -19,7 +19,7 @@ make farms actually afkable
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
-local Window = Library.CreateLib("Pera AOH", "Serpent");
+local Window = Library.CreateLib("Manzana Verde", "Serpent");
 local Tab = Window:NewTab("AutoFarm Menu");
 local MainSection = Tab:NewSection("AutoFarm Menu");
 local TargetTab = Window:NewTab("Player Menu");
@@ -92,7 +92,7 @@ GetList = function()
 		table.insert(dropdown, PLR);
 	end
 end;
-TSection:NewToggle("Bring Mode", "", function(state)
+TSection:NewToggle("ModoTraer", "", function(state)
 	if state then
 		_G.bring = true;
 	else
@@ -107,7 +107,7 @@ TSection:NewButton("Bar", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Building Park", "", function()
+TSection:NewButton("ParqueEnConstruccion", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1748.5, 1000, 1269);
 	else
@@ -115,7 +115,7 @@ TSection:NewButton("Building Park", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("City Square", "", function()
+TSection:NewButton("PlazaDeCiudad", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-385, 1000, 256);
 	else
@@ -123,7 +123,7 @@ TSection:NewButton("City Square", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Contruction Building", "", function()
+TSection:NewButton("EdificioEnConstruccion", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(650, 1300, 284);
 	else
@@ -131,7 +131,7 @@ TSection:NewButton("Contruction Building", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Corner 1", "", function()
+TSection:NewButton("Esquina1", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2773, 1000, -4996);
 	else
@@ -139,7 +139,7 @@ TSection:NewButton("Corner 1", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Corner 2", "", function()
+TSection:NewButton("Esquina2", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3757, 1000, -3801);
 	else
@@ -147,7 +147,7 @@ TSection:NewButton("Corner 2", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Corner 3", "", function()
+TSection:NewButton("Esquina3", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3650, 1000, 2764);
 	else
@@ -155,7 +155,7 @@ TSection:NewButton("Corner 3", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Corner 4", "", function()
+TSection:NewButton("Esquina4", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2809, 1000, 2821);
 	else
@@ -163,7 +163,7 @@ TSection:NewButton("Corner 4", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Evil Lair", "", function()
+TSection:NewButton("GuaridaMala", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-905, 1000, -1086);
 	else
@@ -171,7 +171,7 @@ TSection:NewButton("Evil Lair", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Feild", "", function()
+TSection:NewButton("Campo", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2354, 1000, 4);
 	else
@@ -187,7 +187,7 @@ TSection:NewButton("Hero HQ", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Hero Lair", "", function()
+TSection:NewButton("GuaridaHeroe", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1880, 1000, -1693);
 	else
@@ -195,7 +195,7 @@ TSection:NewButton("Hero Lair", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Ignite Tower", "", function()
+TSection:NewButton("TorreIgnite", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-70, 1000, -247);
 	else
@@ -203,7 +203,7 @@ TSection:NewButton("Ignite Tower", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Military base", "", function()
+TSection:NewButton("BaseMilitar", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259, 1000, -4639);
 	else
@@ -219,7 +219,7 @@ TSection:NewButton("Motel", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Mountain", "", function()
+TSection:NewButton("Montaña", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2206.33, 1500, -2425.4);
 	else
@@ -227,7 +227,7 @@ TSection:NewButton("Mountain", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Mountain 2", "", function()
+TSection:NewButton("Montaña2", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2431.85, 1500, -2363.88);
 	else
@@ -235,7 +235,7 @@ TSection:NewButton("Mountain 2", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Mountain Hole", "", function()
+TSection:NewButton("AgujeroMontaña", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2732, 1256, -1776);
 	else
@@ -243,7 +243,7 @@ TSection:NewButton("Mountain Hole", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Park", "", function()
+TSection:NewButton("Parque", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1399, 1000, 1154);
 	else
@@ -251,7 +251,7 @@ TSection:NewButton("Park", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Plains", "", function()
+TSection:NewButton("Llanuras", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3683, 1000, -144);
 	else
@@ -259,7 +259,7 @@ TSection:NewButton("Plains", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Police Station", "", function()
+TSection:NewButton("EstacionPolicia", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-62, 1000, -480);
 	else
@@ -267,7 +267,7 @@ TSection:NewButton("Police Station", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Prison", "", function()
+TSection:NewButton("Prisión", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-779, 1000, -2594);
 	else
@@ -275,11 +275,11 @@ TSection:NewButton("Prison", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Secret Area", "", function()
+TSection:NewButton("AreaSecreta", "", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1100, 61, -1169);
 	breakvelocity();
 end);
-TSection:NewButton("Secret Cave", "", function()
+TSection:NewButton("CuevaSecreta", "", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(269, -59, 2729);
 	breakvelocity();
 end);
@@ -301,7 +301,7 @@ StatSection:NewToggle("Toggle AutoStats", "", function(state)
 		end);
 	end
 end);
-MainSection:NewToggle("Autofarm Orbs", "", function(state)
+MainSection:NewToggle("AutoFarm Orbes", "", function(state)
 	if state then
 		getgenv().OrbFarm = true;
 		repeat
@@ -321,7 +321,7 @@ MainSection:NewToggle("Autofarm Orbs", "", function(state)
 		end);
 	end
 end);
-MainSection:NewToggle("Laser Civilian Farm", "", function(state)
+MainSection:NewToggle("LaserCivililesFarm", "", function(state)
 	if state then
 		getgenv().LaserC = true;
 		coroutine.resume(coroutine.create(function()
@@ -345,7 +345,7 @@ MainSection:NewToggle("Laser Civilian Farm", "", function(state)
 		breakvelocity();
 	end
 end);
-MainSection:NewToggle("Laser Police Farm", "", function(state)
+MainSection:NewToggle("LaserPoliciaFarm", "", function(state)
 	if state then
 		getgenv().LaserV = true;
 		coroutine.resume(coroutine.create(function()
@@ -369,7 +369,7 @@ MainSection:NewToggle("Laser Police Farm", "", function(state)
 		breakvelocity();
 	end
 end);
-MainSection:NewToggle("Laser Thug Farm", "", function(state)
+MainSection:NewToggle("LaserMatonesFarm", "", function(state)
 	if state then
 		getgenv().LaserH = true;
 		coroutine.resume(coroutine.create(function()
@@ -393,7 +393,7 @@ MainSection:NewToggle("Laser Thug Farm", "", function(state)
 		breakvelocity();
 	end
 end);
-MainSection:NewToggle("Civilian Farm", "", function(state)
+MainSection:NewToggle("Civiles Farm", "", function(state)
 	if state then
 		CivilianX = player.Character.HumanoidRootPart.Position['X'];
 		CivilianY = player.Character.HumanoidRootPart.Position['Y'];
@@ -419,7 +419,7 @@ MainSection:NewToggle("Civilian Farm", "", function(state)
 		end);
 	end
 end);
-MainSection:NewToggle("Police Farm", "", function(state)
+MainSection:NewToggle("Policia Farm", "", function(state)
 	if state then
 		PoliceX = player.Character.HumanoidRootPart.Position['X'];
 		PoliceY = player.Character.HumanoidRootPart.Position['Y'];
@@ -446,7 +446,7 @@ MainSection:NewToggle("Police Farm", "", function(state)
 		end);
 	end
 end);
-MainSection:NewToggle("Thug Farm", "", function(state)
+MainSection:NewToggle("Matones Farm", "", function(state)
 	if state then
 		thugX = player.Character.HumanoidRootPart.Position['X'];
 		thugY = player.Character.HumanoidRootPart.Position['Y'];
@@ -472,7 +472,7 @@ MainSection:NewToggle("Thug Farm", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Spawn Point", "", function(state)
+SSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
 		getgenv().Deathcheck = true;
 		local varX = player.Character.UpperTorso.Position['X'];
@@ -494,7 +494,7 @@ SSection:NewToggle("Spawn Point", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Rapid Punch", "", function(state)
+SSection:NewToggle("PuñoRapido", "", function(state)
 	if state then
 		getgenv().rapid = true;
 		local UserInputService = game:GetService("UserInputService");
@@ -526,7 +526,7 @@ SSection:NewToggle("Rapid Punch", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Rapid Heavy Punch", "", function(state)
+SSection:NewToggle("PuñoPesadoRapido", "", function(state)
 	if state then
 		getgenv().Hrapid = true;
 		local UserInputService = game:GetService("UserInputService");
@@ -556,7 +556,7 @@ SSection:NewToggle("Rapid Heavy Punch", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Super Rapid Punch", "", function(state)
+SSection:NewToggle("SuperPuñoRápido", "", function(state)
 	if state then
 		getgenv().superrapid = true;
 		local UserInputService = game:GetService("UserInputService");
@@ -717,7 +717,7 @@ SSection:NewButton("Name Esp", "", function()
 		end
 	end);
 end);
-SSection:NewToggle("Immortality", "", function(state)
+SSection:NewToggle("Immortal", "", function(state)
 	if state then
 		local varX = player.Character.UpperTorso.Position['X'];
 		local varY = player.Character.UpperTorso.Position['Y'];
@@ -737,7 +737,7 @@ SSection:NewToggle("Immortality", "", function(state)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
 	end
 end);
-SSection:NewToggle("Invisibility", "", function(state)
+SSection:NewToggle("Invisibilidad", "", function(state)
 	if state then
 		local varX = player.Character.UpperTorso.Position['X'];
 		local varY = player.Character.UpperTorso.Position['Y'];
@@ -756,7 +756,7 @@ SSection:NewToggle("Invisibility", "", function(state)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
 	end
 end);
-SSection:NewToggle("Hide Title Gui", "", function(state)
+SSection:NewToggle("Ocultar título GUI", "", function(state)
 	if state then
 		getgenv().hide = true;
 		while hide do
@@ -774,7 +774,7 @@ SSection:NewToggle("Hide Title Gui", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Antitelekinesis", "", function(state)
+SSection:NewToggle("AntiAgarre", "", function(state)
 	if state then
 		getgenv().localtele = true;
 		spawn(function()
@@ -789,7 +789,7 @@ SSection:NewToggle("Antitelekinesis", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Telekinesis Space Fling", "", function(state)
+SSection:NewToggle("TelekinesisParaArrojar", "", function(state)
 	if state then
 		getgenv().telesauras = true;
 		while telesauras do
@@ -805,7 +805,7 @@ SSection:NewToggle("Telekinesis Space Fling", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Safe Teleport", "", function(state)
+SSection:NewToggle("TpSeguro", "", function(state)
 	if state then
 		local player1 = game.Players.LocalPlayer.Character.Humanoid.Health;
 		local math = player1 / 3;
@@ -826,7 +826,7 @@ SSection:NewToggle("Safe Teleport", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("AntiKnockback", "", function(state)
+SSection:NewToggle("Anti-Empuje", "", function(state)
 	if state then
 		getgenv().AntiKnockback = true;
 		while AntiKnockback do
@@ -855,18 +855,18 @@ SSection:NewToggle("Anchor Root Part", "", function(state)
 		player.Character.HumanoidRootPart.Anchored = false;
 	end
 end);
-MSection:NewSlider("Speed", "", 1500, 16, function(s)
+MSection:NewSlider("Velocidad", "", 1500, 16, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s;
 end);
-MSection:NewSlider("Jump", "", 350, 50, function(s)
+MSection:NewSlider("Salto", "", 350, 50, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.JumpPower = s;
 end);
-MSection:NewButton("Inf jump", "", function()
+MSection:NewButton("Salto inf", "", function()
 	game:GetService("UserInputService").JumpRequest:connect(function()
 		game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping");
 	end);
 end);
-MSection:NewButton("Destroy Safezone & Parts", "", function()
+MSection:NewButton("DestruyeZonaSeguraPartes", "", function()
 	game:GetService("Workspace").City.Buildings:Destroy();
 	game:GetService("Workspace").City.Interactive.Bank.Model:Destroy();
 	game:GetService("Workspace").City.Interactive["Police Station"]:GetChildren()[28]:Destroy();
@@ -887,7 +887,7 @@ MSection:NewButton("Destroy Safezone & Parts", "", function()
 	game:GetService("Workspace").SafeZones.Barrier:Destroy();
 	game:GetService("Workspace").SafeZones.Barrier:Destroy();
 end);
-MSection:NewButton("AntiLag", "", function()
+MSection:NewButton("Quitar Lag", "", function()
 	local Terrain = workspace:FindFirstChildOfClass("Terrain");
 	Terrain.WaterWaveSize = 0;
 	Terrain.WaterWaveSpeed = 0;
@@ -937,6 +937,26 @@ MSection:NewButton("Mini Crash", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
+MSection:NewButton("Crash Danger", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 50000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Crash Definitive", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 5000000000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
 MSection:NewButton("Server Crasher", "", function(state)
 	local x = 0;
 	repeat
@@ -954,26 +974,26 @@ MSection:NewButton("Reset", "", function()
 	player.Character:BreakJoints();
 end);
 GetList();
-local slcplr = TargetSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
+local slcplr = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, function(currentOption)
 	spawn(function()
 		_G.tplayer = currentOption;
 		getgenv().confirm = true;
 	end);
 end);
-TargetSection:NewButton("Refresh Dropdown", "", function()
+TargetSection:NewButton("Actualizar", "", function()
 	spawn(function()
 		GetList();
 		slcplr:Refresh(dropdown);
 	end);
 end);
-TargetSection:NewButton("Goto Player", "", function()
+TargetSection:NewButton("Tp", "", function()
 	spawn(function()
 		local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart;
 		p1.CFrame = game.Players[_G.tplayer].Character.HumanoidRootPart.CFrame;
 		breakvelocity();
 	end);
 end);
-TargetSection:NewToggle("Toggle Spectate", "", function(state)
+TargetSection:NewToggle("Espectar", "", function(state)
 	spawn(function()
 		if state then
 			spawn(function()
@@ -996,7 +1016,7 @@ TargetSection:NewToggle("Toggle Spectate", "", function(state)
 		end
 	end);
 end);
-TargetSection:NewToggle("Kill Player", "", function(state)
+TargetSection:NewToggle("MatarJugador", "", function(state)
 	if state then
 		getgenv().killplr = true;
 		local varX = player.Character.HumanoidRootPart.Position['X'];
@@ -1011,9 +1031,6 @@ TargetSection:NewToggle("Kill Player", "", function(state)
 				breakvelocity();
 				game:GetService("ReplicatedStorage").Events.Transform:FireServer("metalSkin", true);
 				wait(1);
-        until not killPlayerStatus or not Module.IsValidActor(target.Character) or not Module.NotProtected(target.Character) or not Module.IsValidActor(player.Character)
-        Connection:Disconnect()
-        player.Character.HumanoidRootPart.CFrame = pos
 			end
 		end);
 		spawn(function()
@@ -1063,7 +1080,7 @@ TargetSection:NewToggle("Kill Player", "", function(state)
 		end);
 	end
 end);
-TargetSection:NewToggle("Loop Goto Player", "", function(state)
+TargetSection:NewToggle("Tp sin fin", "", function(state)
 	if state then
 		getgenv().loopgoto = true;
 		local varX = player.Character.HumanoidRootPart.Position['X'];
@@ -1107,7 +1124,7 @@ TargetSection:NewToggle("Loop Goto Player", "", function(state)
 		end);
 	end
 end);
-TargetSection:NewToggle("Fling Player", "", function(state)
+TargetSection:NewToggle("LanzarJugador", "", function(state)
 	if state then
 		getgenv().fling = true;
 		local varX = player.Character.HumanoidRootPart.Position['X'];
@@ -1182,6 +1199,47 @@ TargetSection:NewToggle("Fling Player", "", function(state)
 			end
 		end
 		breakvelocity();
+	end
+end);
+TargetSection:NewToggle("Kill Aura", "", function(state)
+	if state then
+		getgenv().Kill_A = true;
+		spawn(function()
+			while killplr do
+				task.wait();
+				task.wait();
+				task.wait();
+				task.wait();
+				task.wait();
+				task.wait();
+				spawn(function()
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+				end);
+				spawn(function()
+					if (killplr == false) then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
+					end
+				end);
+			end
+		end);
+	else
+		spawn(function()
+			getgenv().breakv = false;
+			wait(0.2);
+			getgenv().killplr = false;
+			wait(0.1);
+			getgenv().killplr = true;
+			breakvelocity();
+		end);
 	end
 end);
 TargetSection:NewToggle("Laser", "", function(state)
@@ -1264,7 +1322,7 @@ KSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 		_G.metalskin = false;
 	end
 end);
-KSection:NewKeybind("Carry Player", "", Enum.KeyCode['H'], function()
+KSection:NewKeybind("LlevarJugador", "", Enum.KeyCode['H'], function()
 	if (_G.CToggle == false) then
 		spawn(function()
 			getNearPlayer(99);
@@ -1294,14 +1352,14 @@ KSection:NewKeybind("Carry Player", "", Enum.KeyCode['H'], function()
 		end);
 	end
 end);
-KSection:NewKeybind("Telekinesis Lock", "", Enum.KeyCode['T'], function()
+KSection:NewKeybind("AgarreBloqueado", "", Enum.KeyCode['T'], function()
 	spawn(function()
 		local LookVector = game.Workspace.Camera.CFrame.LookVector;
 		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
 		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
 	end);
 end);
-KSection:NewKeybind("Telekinesis kill", "", Enum.KeyCode['G'], function()
+KSection:NewKeybind("TelekinesisMuerte", "", Enum.KeyCode['G'], function()
 	spawn(function()
 		getNearPlayer(99);
 		for i, v in pairs(plrlist) do
@@ -1319,7 +1377,7 @@ KSection:NewKeybind("Telekinesis kill", "", Enum.KeyCode['G'], function()
 		end
 	end);
 end);
-KSection:NewKeybind("Release Telekinesis", "", Enum.KeyCode['C'], function()
+KSection:NewKeybind("LiberarAgarre", "", Enum.KeyCode['C'], function()
 	plrlist = {};
 	Players = game:GetService("Players");
 	for i, player in pairs(Players:GetPlayers()) do
@@ -1331,10 +1389,10 @@ end);
 KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
-local MainSection = Tab:NewSection("Made By Pera");
-local TargetSection = TargetTab:NewSection("Made By Pera");
-local SSection = STab:NewSection("Made By Pera");
-local StatSection = StatTab:NewSection("Made By Pera");
-local TSection = TTab:NewSection("Made By Pera");
-local MSection = MTab:NewSection("Made By Pera");
-local KSection = KTab:NewSection("Made By Pera");
+local MainSection = Tab:NewSection("Creado por ManzanaVerde");
+local TargetSection = TargetTab:NewSection("Creado por ManzanaVerde");
+local SSection = STab:NewSection("Creado por ManzanaVerde");
+local StatSection = StatTab:NewSection("Creado por ManzanaVerde");
+local TSection = TTab:NewSection("Creado por ManzanaVerde");
+local MSection = MTab:NewSection("Creado por ManzanaVerde");
+local KSection = KTab:NewSection("Creado por ManzanaVerde");
