@@ -927,11 +927,6 @@ MSection:NewButton("Crash Grande", "", function(state)
 		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
 	end
 end);
-MSection:NewButton("Crash Maldito", "", function(state)
-	for i = 1, 999999999 do
-		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
-	end
-end);
 MSection:NewButton("Mini Crash", "", function(state)
 	local x = 0;
 	repeat
@@ -952,41 +947,12 @@ MSection:NewButton("Crash Danger", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-MSection:NewButton("Crash Pesado", "", function(state)
+MSection:NewButton("DESTRUCTOR", "", function(state)
 	local x = 0;
 	repeat
-		x += 1
+		x += 4
 		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 60000 
-	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
-	wait();
-	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
-end);
-MSection:NewButton("Crash ULTRAPESADO", "", function(state)
-	local x = 0;
-	repeat
-		x += 2
-		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 80000 
-	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
-	wait();
-	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
-end);
-	local x = 0;
-	repeat
-		x += 1
-		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 70000 
-	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
-	wait();
-	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
-end);
-MSection:NewButton("Crash Peligroso", "", function(state)
-	local x = 0;
-	repeat
-		x += 3
-		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 99999 
+	until x == 50000 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
