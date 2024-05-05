@@ -922,8 +922,13 @@ MSection:NewButton("Quitar Lag", "", function()
 		end)();
 	end);
 end);
-MSection:NewButton("Ground Crack Lag", "", function(state)
+MSection:NewButton("Crash Grande", "", function(state)
 	for i = 1, 1000 do
+		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
+	end
+end);
+MSection:NewButton("Crash Maldito", "", function(state)
+	for i = 1, 999999999 do
 		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
 	end
 end);
@@ -947,12 +952,42 @@ MSection:NewButton("Crash Danger", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-MSection:NewButton("Crash Definitive", "", function(state)
+MSection:NewButton("Crash Pesado", "", function(state)
 	local x = 0;
 	repeat
 		x += 1
 		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
-	until x == 5000000000 
+	until x == 500000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Crash UltraPesado", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 800000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Crash Dios", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 9999999999 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Crash Ultra", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 999999999999999999 
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
@@ -1242,7 +1277,7 @@ TargetSection:NewToggle("Kill Aura", "", function(state)
 		end);
 	end
 end);
-TargetSection:NewToggle("Laser", "", function(state)
+TargetSection:NewToggle("Ojos Laser", "", function(state)
 	spawn(function()
 		if state then
 			getgenv().LaserL = true;
@@ -1267,7 +1302,7 @@ TargetSection:NewToggle("Laser", "", function(state)
 		end
 	end);
 end);
-TargetSection:NewToggle("Give Orbs", "", function(state)
+TargetSection:NewToggle("ObtenerOrbs", "", function(state)
 	spawn(function()
 		if state then
 			getgenv().ORBGIVE = true;
@@ -1293,7 +1328,7 @@ TargetSection:NewButton("Remove Gyro", "", function()
 	game:GetService("Workspace")[_G.tplayer].Humanoid.WalkSpeed = 150;
 	game:GetService("Workspace")[_G.tplayer].Humanoid.JumpPower = 150;
 end);
-TargetSection:NewToggle("Disable Telekinesis", "", function(state)
+TargetSection:NewToggle("Desactivar Agarre", "", function(state)
 	spawn(function()
 		if state then
 			Players = game:GetService("Players");
