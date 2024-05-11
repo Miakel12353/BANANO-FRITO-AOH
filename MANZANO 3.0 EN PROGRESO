@@ -29,7 +29,7 @@ local SSection = STab:NewSection("Self Menu");
 local StatTab = Window:NewTab("AutoStat Menu");
 local StatSection = StatTab:NewSection("AutoStat Menu");
 local OtherTab = Window:NewTab("Other Menu");
-local OtherSection = StatTab:NewSection("Other Menu");
+local OtherSection = OtherTab:NewSection("Other Menu");
 local TTab = Window:NewTab("Teleport Menu");
 local TSection = TTab:NewSection("Teleport Menu");
 local KTab = Window:NewTab("Keybind Menu");
@@ -474,7 +474,7 @@ MainSection:NewToggle("Matones Farm", "", function(state)
 		end);
 	end
 end);
-OtherSection = StatTab:NewSection("Other Menu");
+OtherSection = OtherTab:NewSection("Other Menu");
 
 SSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
