@@ -533,10 +533,6 @@ function upgradeStatistic(stat, types, amount)
                 upgradeEvent:InvokeServer(stat)
             end)
         end
-    end 
-end
-
-
 SSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
 		getgenv().Deathcheck = true;
@@ -1274,47 +1270,6 @@ TargetSection:NewToggle("LanzarJugador", "", function(state)
 			end
 		end
 		breakvelocity();
-	end
-end);
-TargetSection:NewToggle("Kill Aura", "", function(state)
-	if state then
-		getgenv().Kill_A = true;
-		spawn(function()
-			while killplr do
-				task.wait();
-				task.wait();
-				task.wait();
-				task.wait();
-				task.wait();
-				task.wait();
-				spawn(function()
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-				end);
-				spawn(function()
-					if (killplr == false) then
-						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
-					end
-				end);
-			end
-		end);
-	else
-		spawn(function()
-			getgenv().breakv = false;
-			wait(0.2);
-			getgenv().killplr = false;
-			wait(0.1);
-			getgenv().killplr = true;
-			breakvelocity();
-		end);
 	end
 end);
 TargetSection:NewToggle("Ojos Laser", "", function(state)
