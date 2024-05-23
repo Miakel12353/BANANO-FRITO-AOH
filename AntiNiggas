@@ -1,0 +1,109 @@
+--[[
+
+
+💥💥💥-ANTI NIGGERS-💥💥💥
+
+
+
+                                                     
+Made By Nigga                                                  
+Open Source GAYS      
+
+ToDo List {
+better esp with health bar or something
+add pcalls and shit
+disable everyones colision for antifling :shrug:
+perhaps a teleport player to fuck the bring mode 
+make farms actually afkable
+}                                                   
+]]--
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
+local Window = Library.CreateLib(" ANTI GAYS MARICONES ");
+local MTab = Window:NewTab("ANTI PERRAS");
+local MSection = MTab:NewSection("ANTI PERRAS");
+
+
+MSection:NewButton("AntiLag", "", function()
+	local Terrain = workspace:FindFirstChildOfClass("Terrain");
+	Terrain.WaterWaveSize = 0;
+	Terrain.WaterWaveSpeed = 0;
+	Terrain.WaterReflectance = 0;
+	Terrain.WaterTransparency = 0;
+	settings().Rendering.QualityLevel = 1;
+	for i, v in pairs(game:GetDescendants()) do
+		if (v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart")) then
+			v.Material = "Plastic";
+			v.Reflectance = 0;
+		elseif v:IsA("Decal") then
+			v.Transparency = 1;
+		elseif (v:IsA("ParticleEmitter") or v:IsA("Trail")) then
+			v.Lifetime = NumberRange.new(0);
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1;
+			v.BlastRadius = 1;
+		end
+	end
+	workspace.DescendantAdded:Connect(function(child)
+		coroutine.wrap(function()
+			if child:IsA("ForceField") then
+				RunService.Heartbeat:Wait();
+				child:Destroy();
+			elseif child:IsA("Sparkles") then
+				RunService.Heartbeat:Wait();
+				child:Destroy();
+			elseif (child:IsA("Fumar") or child:IsA("Fire")) then
+				RunService.Heartbeat:Wait();
+				child:Destroy();
+			end
+		end)();
+	end);
+end);
+MSection:NewButton("Craqueo de lag grande", "", function(state)
+	for i = 1, 1000 do
+		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
+	end
+end);
+MSection:NewButton("MATAPERRAS", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 5000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Craqueo de lag grande", "", function(state)
+	for i = 1, 1000 do
+		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
+	end
+end);
+MSection:NewButton("Mini Crash", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 5000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+MSection:NewButton("Server Crasher", "", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 50000 
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+	wait(0.2);
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
+local MainSection = Tab:NewSection("GAY EL QUE LO LEA");
+local TargetSection = TargetTab:NewSection("GAY EL QUE LO LEA");
+local SSection = STab:NewSection("GAY EL QUE LO LEA");
+local StatSection = StatTab:NewSection("GAY EL QUE LO LEA");
+local TSection = TTab:NewSection("GAY EL QUE LO LEA");
+local MSection = MTab:NewSection("GAY EL QUE LO LEA");
+local KSection = KTab:NewSection("GAY EL QUE LO LEA");
+
