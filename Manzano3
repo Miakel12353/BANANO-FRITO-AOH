@@ -26,10 +26,10 @@ local TargetTab = Window:NewTab("Player Menu");
 local TargetSection = TargetTab:NewSection("Player Menu");
 local STab = Window:NewTab("Self Menu");
 local SSection = STab:NewSection("Self Menu");
+local Opab = Window:NewTab("Opciones");
+local OpSection = STab:NewSection("Opciones");
 local StatTab = Window:NewTab("AutoStat Menu");
 local StatSection = StatTab:NewSection("AutoStat Menu");
-local OtherTab = Window:NewTab("Other Menu");
-local OtherSection = OtherTab:NewSection("Other Menu");
 local TTab = Window:NewTab("Teleport Menu");
 local TSection = TTab:NewSection("Teleport Menu");
 local KTab = Window:NewTab("Keybind Menu");
@@ -474,7 +474,29 @@ MainSection:NewToggle("Matones Farm", "", function(state)
 		end);
 	end
 end);
-OtherSection:NewToggle("Kill Aura", "", function(state)
+SSection:NewToggle("PuntoDeAparición", "", function(state)
+	if state then
+		getgenv().Deathcheck = true;
+		local varX = player.Character.UpperTorso.Position['X'];
+		local varY = player.Character.UpperTorso.Position['Y'];
+		local varZ = player.Character.UpperTorso.Position['Z'];
+		spawn(function()
+			while Deathcheck do
+				local player = game.Players.LocalPlayer.Character.Humanoid.Health;
+				if (player == 0) then
+					wait(6.5);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
+				end
+				wait(1);
+			end
+		end);
+	else
+		spawn(function()
+			getgenv().Deathcheck = false;
+		end);
+	end
+end);
+OpSection:NewSection("Opciones", "", function(state)
 	if state then
 		getgenv().Kill_A = true;
 		spawn(function()
@@ -505,7 +527,6 @@ OtherSection:NewToggle("Kill Aura", "", function(state)
 			end
 		end);
 	else
-
 		spawn(function()
 			getgenv().breakv = false;
 			wait(0.2);
@@ -513,45 +534,6 @@ OtherSection:NewToggle("Kill Aura", "", function(state)
 			wait(0.1);
 			getgenv().killplr = true;
 			breakvelocity();
-		end);
-	end
-OtherSection:NewToggle("Energy Infinite", "", function(state)
-	if state then
-		getgenv().Energy_I = true;
-		spawn(function()
-			while EnergyInf do
-function upgradeStatistic(stat, types, amount)
-    if stat == nil then return end
-    if types == nil then return end
-    if amount == nil then return end
-
-    if types == "default" then
-        upgradeEvent:InvokeServer(stat)
-    elseif types == "fast" then
-        for i = 1, amount do
-            task.spawn(function()
-                upgradeEvent:InvokeServer(stat)
-            end)
-        end
-SSection:NewToggle("PuntoDeAparición", "", function(state)
-	if state then
-		getgenv().Deathcheck = true;
-		local varX = player.Character.UpperTorso.Position['X'];
-		local varY = player.Character.UpperTorso.Position['Y'];
-		local varZ = player.Character.UpperTorso.Position['Z'];
-		spawn(function()
-			while Deathcheck do
-				local player = game.Players.LocalPlayer.Character.Humanoid.Health;
-				if (player == 0) then
-					wait(6.5);
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
-				end
-				wait(1);
-			end
-		end);
-	else
-		spawn(function()
-			getgenv().Deathcheck = false;
 		end);
 	end
 end);
