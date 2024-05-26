@@ -1,5 +1,5 @@
-local host = {"germanvb_xd"} -- the one thats killing them
-local noobs  = {"germanvb_xd","Orejitas1223"} -- the ones that are getting killed
+local host = {"player1"} -- the one thats killing them
+local noobs  = {"player1","player2"} -- the ones that are getting killed
 abort = false
 noclip = true
 local players = game.Players
