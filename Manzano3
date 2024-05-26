@@ -1,4 +1,4 @@
---[[
+4--[[
 
 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
@@ -1401,25 +1401,6 @@ KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
 OpSection:NewToggle("Energy Fast","",
-function(state)
-	if state then
-		getgenv().Energy_F = true;
-		spawn(function()
- 
-function upgradeStatistic(stat, types, amount)
-    if stat == nil then return end
-    if types == nil then return end
-    if amount == nil then return end
-
-    if types == "default" then
-        upgradeEvent:InvokeServer(stat)
-    elseif types == "fast" then
-        for i = 1, amount do
-            task.spawn(function()
-                upgradeEvent:InvokeServer(stat)
-            end)
-        end
-   end
 local MainSection = Tab:NewSection("Creado por ManzanaVerde");
 local TargetSection = TargetTab:NewSection("Creado por ManzanaVerde");
 local SSection = STab:NewSection("Creado por ManzanaVerde");
