@@ -17,49 +17,6 @@ perhaps a teleport player to fuck the bring mode
 make farms actually afkable
 }                                                   
 ]]--
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))() 
--- you have to put this other wise there will be no gui
-
-
-local Window = Library.CreateLib("Sanskingstop key system", "DarkTheme") 
--- this will make gui from that library
-
-
-local Tab = Window:NewTab("key system") 
--- this is to make tab in gui
-
-local Section = Tab:NewSection("Key") 
--- this is to make section in tab
-
-
-local key = "Test"
-
-local key2
-Section:NewTextBox("key", "enter key", function(txt) 
--- this is to make textbox for key
-
-    key2 = txt 
--- this will make key2 whatever you put inside the textbox
-
-end)
-
-Section:NewButton("check key", "checks your key", function() 
--- this button will check key
-
-    if key2 == key then
-        print('key is real')
-    else
-        print('fake key')
-    end
-end)
-
-
-
-
-
-
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
 local Window = Library.CreateLib("Manzana Verde", "Serpent");
 local Tab = Window:NewTab("AutoFarm Menu");
