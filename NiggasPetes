@@ -17,7 +17,7 @@ add pcalls and shit
 disable everyones colision for antifling :shrug:
 perhaps a teleport player to fuck the bring mode 
 make farms actually afkable
-}                                                   
+}                                                  
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
