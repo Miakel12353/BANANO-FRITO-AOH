@@ -1,17 +1,17 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))() --This Will Load The Script Code
-local Window = Library.CreateLib("EXAMPLE HOW TO MAKE A KEY SYSTEM FOR MOBILE OR PC", "DarkTheme") --This Will Make The Script Hub
+local Window = Library.CreateLib("EXAMPLE HOW TO MAKE A KEY SYSTEM FOR MOBILE OR PC", "BloodTheme") --This Will Make The Script Hub
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() 
 
 local Player = game.Players.LocalPlayer
 
 function CorrectKeyAndLoadTheScript()
-         loadstring(game:HttpGet('https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/PeraPito'))() --This Where You Put The Script That Will Be Loaded If The Key Is Correct
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/NiggasPetes'))() --This Where You Put The Script That Will Be Loaded If The Key Is Correct
 end
 
 OrionLib:MakeNotification({
 	Name = "Logged In!",
-	Content = "You need key "..Player.Name..".",
+	Content = "Necesitas Key "..Player.Name..".",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 }) --Notification
@@ -23,7 +23,7 @@ local Tab = Window:NewTab("KEY SYSTEM") --This Will Make A Tab
 
 local Section = Tab:NewSection("Key System") --This Will Make A Section
 
-Section:NewTextBox("Enter Key", "Key", function(Value)
+Section:NewTextBox("Login Key ", "Key", function(Value)
 		getgenv().KeyInput = Value
 end) 
 
@@ -61,7 +61,7 @@ Section:NewButton("Check Key", "This Will Check The Key You Enter", function()
         end
 end)  
 
-Section:NewButton("Copy Link", "ButtonInfo", function()
+Section:NewButton("Info copy", "ButtonInfo", function()
           		setclipboard("https://discord.com/invite/bJNRXcfNDb") --Put The Link Here
           OrionLib:MakeNotification({
                 Name = "Copied Link!",
