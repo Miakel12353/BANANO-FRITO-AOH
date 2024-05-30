@@ -16,11 +16,6 @@ perhaps a teleport player to fuck the bring mode
 make farms actually afkable
 }                                                  
 ]]--
-
-require(7004742023).Kick("juniodechil")
-
-password:Free Scripts
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
 local Window = Library.CreateLib("Manzana AOH", "BloodTheme");
 local Tab = Window:NewTab("AutoFarm Menu");
