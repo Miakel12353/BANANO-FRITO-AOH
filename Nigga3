@@ -1137,11 +1137,11 @@ end);
 TargetSection:NewToggle("Inf Energy", "", function(state)
         if state then
                 getgenv().Kill_A = true;
-                spawn(function()
-                        while task.wait() do
+spawn(function()
+while task.wait() do
         getsenv(player.PlayerScripts.GameClient)._G.energy = math.huge
     end
-end)
+end) 
 TargetSection:NewToggle("LanzarJugador", "", function(state)
         if state then
                 getgenv().fling = true;
