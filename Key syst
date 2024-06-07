@@ -1,72 +1,65 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))() --This Will Load The Script Code
-local Window = Library.CreateLib("EXAMPLE HOW TO MAKE A KEY SYSTEM FOR MOBILE OR PC", "BloodTheme") --This Will Make The Script Hub
+local Players = game:GetService('Players')
+local ReplicatedStorage = game:GetService('ReplicatedStorage')
+local RunService = game:GetService('RunService')
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() 
+local player = Players.LocalPlayer
 
-local Player = game.Players.LocalPlayer
+local Module = require(ReplicatedStorage.Modules.SharedLocal)
+local punchEvent = ReplicatedStorage.Events.Punch
+local upgradeEvent = ReplicatedStorage.Events.UpgradeAbility
 
-function CorrectKeyAndLoadTheScript()
-         loadstring(game:HttpGet('https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/NiggasPetes'))() --This Where You Put The Script That Will Be Loaded If The Key Is Correct
+for _, v in next, getconnections(player.Idled) do
+    v:Disable()
 end
 
-OrionLib:MakeNotification({
-	Name = "Logged In!",
-	Content = "You need key "..Player.Name..".",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-}) --Notification
+if not player.Character then
+    repeat wait();
+        getsenv(player:WaitForChild('PlayerScripts'):WaitForChild('IntroScript')).Play()
+    until player.Character and Module.IsValidActor(player.Character)
+end
 
-getgenv().Key = "master20" --Put The Correct Key Here
-getgenv().KeyInput = "string" --KeyInput Require To Make The Key Work
-
-local Tab = Window:NewTab("KEY SYSTEM") --This Will Make A Tab
-
-local Section = Tab:NewSection("Key System") --This Will Make A Section
-
-Section:NewTextBox("Enter Key", "Key", function(Value)
-		getgenv().KeyInput = Value
-end) 
-
-Section:NewButton("Checar key", "This Will Check The Key You Enter", function()
-            if getgenv().KeyInput == getgenv().Key then
-            OrionLib:MakeNotification({
-                Name = "Checking Key",
-                Content = "Checking The Key You Entered",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(2)
-            OrionLib:MakeNotification({
-                Name = "Correct Key!",
-                Content = "The key you entered is Valid.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(.3)
-            CorrectKeyAndLoadTheScript()
-        else
-           OrionLib:MakeNotification({
-                Name = "Checking Key",
-                Content = "Checking The Key You Entered",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(2)
-            OrionLib:MakeNotification({
-                Name = "Incorrect Key!",
-                Content = "The key you entered is invalid.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        end
-end)  
-
-Section:NewButton("Info copy link", "ButtonInfo", function()
-          		setclipboard("https://discord.com/invite/bJNRXcfNDb") --Put The Link Here
-          OrionLib:MakeNotification({
-                Name = "Copied Link!",
-                Content = "Success Copied Link.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
+spawn(function()
+    while task.wait() do
+        getsenv(player.PlayerScripts.GameClient)._G.energy = math.huge
+    end
 end)
+
+function lightPunch()
+    task.spawn(function() punchEvent:FireServer(0,0.1,1) end)
+end
+
+function heavyPunch()
+    task.spawn(function() punchEvent:FireServer(0.4,0.1,1) end)
+end
+
+function goInvisible()
+    invisibleStatus = true
+    local ogPosition = player.Character.HumanoidRootPart.CFrame
+    
+    player.Character.HumanoidRootPart.CFrame = CFrame.new(-2463.92822, 256.457916, -2009.25574)
+    wait(0.5)
+    local Clone = player.Character.LowerTorso.Root:Clone()
+    player.Character.LowerTorso.Root:Destroy()
+    Clone.Parent = player.Character.LowerTorso
+    wait(0.5)
+    player.Character.HumanoidRootPart.CFrame = ogPosition
+end
+player.Character.Humanoid.Died:Connect(function()
+    invisibleStatus = false
+end)
+
+function upgradeStatistic(stat, types, amount)
+    if stat == nil then return end
+    if types == nil then return end
+    if amount == nil then return end
+
+    if types == "default" then
+        upgradeEvent:InvokeServer(stat)
+    elseif types == "fast" then
+        for i = 1, amount do
+            task.spawn(function()
+                upgradeEvent:InvokeServer(stat)
+            end)
+        end
+    end 
+end
