@@ -1,31 +1,5 @@
-local RS = game:GetService("ReplicatedStorage")
-local Event = RS:WaitForChild("ChangePlrStats")
+clientMessage(chatColor.GREEN + "Mod by: dwsteadman")
 
-
-Event.OnServerEvent:Connect(function(player,Health,Hunger,PlrToChange)
-	local CurrentPlayer = game.Players:WaitForChild(PlrToChange)
-	local Plrstats = CurrentPlayer:WaitForChild("PlayerValues")
-	local HungerVal = Plrstats.Hunger
-	local plrchar = CurrentPlayer.Character or CurrentPlayer.CharacterAdded:wait()
-	local Humanoid = plrchar:WaitForChild("Humanoid")
-	local HealthVal = Humanoid.Health
-	local MaxHealth = Humanoid.MaxHealth
-	
-	
-	if Hunger == "inf" then
-		HungerVal.Value = math.huge
-		
-	else
-		HungerVal.Value = Hunger
-	end
-	
-	
-	if Health == "inf" then
-		HealthVal = math.huge
-		MaxHealth = math.huge
-
-	else
-		HealthVal = Health
-	end
-	
-end)
+modTick(){
+  setPlayerHealth(999999999999999999999999999);
+}
