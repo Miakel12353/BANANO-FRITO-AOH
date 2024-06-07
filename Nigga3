@@ -1134,14 +1134,6 @@ TargetSection:NewToggle("Tp sin fin", "", function(state)
                 end);
         end
 end);
-TargetSection:NewToggle("Energy Inf", "", function(state)
-        if state then
-                getgenv().Energy_inf = true;
-                spawn(function()
-                        while Energyinf do
-                                task.wait();   getsenv(player.PlayerScripts.GameClient)._G.energy = math.huge
-    end
-end)
 TargetSection:NewToggle("LanzarJugador", "", function(state)
         if state then
                 getgenv().fling = true;
