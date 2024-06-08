@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/laderite/zenx/main/packages/library.lua"))()
 
 local Players = game:GetService('Players')
 local ReplicatedStorage = game:GetService('ReplicatedStorage')
@@ -212,7 +212,7 @@ end)
 -- Creating the library
 
 local Menu = library:CreateMenu({
-    Name = "Zen X » Age of Heroes (Rewritten)",
+    Name = "Manzano Nigga",
     ConfigurationSaving = {
        Enabled = true,
        FolderName = nil,
@@ -276,10 +276,11 @@ function setTarget(va, title)
     end
 end
 
-target_section:CreateToggle({Name = "Kill Player", Callback = function(v)
-    killPlayerStatus = v 
-    if v then killPlayer(selectedPlayer) end
-end})
+target_section:CreateToggle({Name = "Kill Player", function(currentOption)
+	spawn(function()
+		_G.tplayer = currentOption;
+		getsenv().confirm = true;
+end}) 
 
 target_section:CreateToggle({Name = "Spectate Player", Callback = function(v)
     if v then
