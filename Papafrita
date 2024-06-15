@@ -1213,10 +1213,9 @@ TargetSection:NewToggle("LanzarJugador", "", function(state)
 		breakvelocity();
 	end
 end);
-OptionsSection:NewToggle("Fly", "",  function(state)
+OptionsSection:NewButton("Fly", "", function()
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Miakel12353/RandomScptsEtes/main/FLY%20-I%20NFINITE?token=GHSAT0AAAAAACTVUP6WHL6VQH26RX72M4WQZTOBXVA'),true))()
 end)
-
 TargetSection:NewToggle("Life INF", "", function(state)
 	if state then
 		getgenv(player.PlayerScripts.GameClient)._G.vitality = math.huge
