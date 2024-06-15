@@ -1213,17 +1213,19 @@ TargetSection:NewToggle("LanzarJugador", "", function(state)
 		breakvelocity();
 	end
 end);
-OptionsSection:NewButton("Fly", "", function()
+OptionsSection:NewToggle("Fly", "", function(state)
+	if state then
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Miakel12353/RandomScptsEtes/main/FLY%20-I%20NFINITE?token=GHSAT0AAAAAACTVUP6WHL6VQH26RX72M4WQZTOBXVA'),true))()
+	end
 end)
-TargetSection:NewToggle("Life INF", "", function(state)
+Optionsection:NewToggle("Life INF", "", function(state)
 	if state then
 		getgenv(player.PlayerScripts.GameClient)._G.vitality = math.huge
 	end
 end)
-TargetSection:NewToggle("Energy INF", "", function(state)
+OptionsSection:NewToggle("Energy INF", "", function(state)
 	if state then
-		getgenv(player.PlayerScripts.GameClient)._G.energy = math.huge
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/Key%20syst'),true))()
 	end
 end)
 TargetSection:NewToggle("Kill Aura", "", function(state)
