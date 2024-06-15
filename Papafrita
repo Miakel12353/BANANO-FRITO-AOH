@@ -26,8 +26,8 @@ local TargetTab = Window:NewTab("Player Menu");
 local TargetSection = TargetTab:NewSection("Player Menu");
 local STab = Window:NewTab("Self Menu");
 local SSection = STab:NewSection("Self Menu");
-local OptTab = Window:NewTab("Options");
-local OptSection = STab:NewSection("Options");
+local OptionsTab = Window:NewTab("Options");
+local OptinsSection = STab:NewSection("Options");
 local StatTab = Window:NewTab("AutoStat Menu");
 local StatSection = StatTab:NewSection("AutoStat Menu");
 local TTab = Window:NewTab("Teleport Menu");
@@ -1213,7 +1213,7 @@ TargetSection:NewToggle("LanzarJugador", "", function(state)
 		breakvelocity();
 	end
 end);
-OptSection:NewToggle("Fly" , function()
+OptionsSection:NewToggle("Fly", "",  function(state)
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Miakel12353/RandomScptsEtes/main/FLY%20-I%20NFINITE?token=GHSAT0AAAAAACTVUP6WHL6VQH26RX72M4WQZTOBXVA'),true))()
 end)
 
@@ -1417,6 +1417,7 @@ KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 end);
 local MainSection = Tab:NewSection("Creado por Manzana");
 local TargetSection = TargetTab:NewSection("Creado por Manzana");
+local OptionsSection = Tab:NewSection("Creado por Manzana");
 local SSection = STab:NewSection("Creado por Manzana");
 local StatSection = StatTab:NewSection("Creado por Manzana");
 local TSection = TTab:NewSection("Creado por Manzana");
