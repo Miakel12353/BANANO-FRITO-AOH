@@ -24,4 +24,63 @@ local Tab = Window:NewTab("TabName")
 
 ---Menu
 local Target = Window:NewTab("Player Menu")
-local Section = Tab:NewSection("Matanza")
+local TargetSection = Target:NewSection("Matanza")
+
+_G.CToggle = false;
+_G.metalskin = false;
+_G.LOCALPLAYER = game.Players.LocalPlayer.Name;
+_G.bring = false;
+player = game.Players.LocalPlayer;
+breakvelocity = function()
+	spawn(function()
+		local BeenASecond, V3 = false, Vector3.new(0, 0, 0);
+		delay(1, function()
+			BeenASecond = true;
+		end);
+		while not BeenASecond do
+			for _, v in ipairs(player.Character:GetDescendants()) do
+				if v.IsA(v, "BasePart") then
+					v.Velocity, v.RotVelocity = V3, V3;
+				end
+			end
+			wait();
+		end
+	end);
+end;
+plrlist = {};
+plrnum = 0;
+getNearPlayer = function(maxDistance)
+	pcall(function()
+		if (player and player.Character) then
+			local playerLocation = player.Character.HumanoidRootPart.Position;
+			for i, v in pairs(game.Players:GetChildren()) do
+				if (v.Character and (v.Character.Health ~= 0)) then
+					local location = v.Character.HumanoidRootPart.Position;
+					if (((location - playerLocation).Magnitude <= maxDistance) and (v.Character.Health ~= 0)) then
+						pcall(function()
+							if (v == player) then
+							else
+								local teleexist = game:GetService("Workspace")[v.Name].HumanoidRootPart;
+								if (not teleexist:FindFirstChild("telekinesisPosition") and (v.Character.Health ~= 0)) then
+								elseif (v ~= player) then
+									plrnum += 1
+									table.insert(plrlist, v.Character);
+								end
+							end
+						end);
+					end
+				end
+			end
+		end
+	end);
+end;
+GetList = function()
+	x = 1;
+	Plyr = game.Players:GetPlayers();
+	dropdown = {};
+	for value in pairs(Plyr) do
+		PLR = Plyr[x].Name;
+		x += 1
+		table.insert(dropdown, PLR);
+	end
+end;
