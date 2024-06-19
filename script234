@@ -19,7 +19,7 @@ make farms actually afkable
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Turbo Boss V3", "SynapseTheme")
+local Window = Library.CreateLib("Turbo Boss V3", "Synapse")
 local Tab = Window:NewTab("TabName")
 
 --AutoFarmer
