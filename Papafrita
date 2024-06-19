@@ -19,7 +19,7 @@ make farms actually afkable
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Turbo Boss V3", "Ocean");
+local Window = Library.CreateLib("Turbo Boss 3", "Ocean");
 local Autofarm = Window:NewTab("Farming");
 local AutofarmSection = Autofarm:NewSection("Farmeo");
 local Teleport = Window:NewTab("Teleporting");
