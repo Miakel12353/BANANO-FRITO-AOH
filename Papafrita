@@ -20,28 +20,20 @@ make farms actually afkable
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Turbo Boss V3", "Synapse");
---AutoFarmer
 local Autofarm = Window:NewTab("Farming");
 local AutofarmSection = Autofarm:NewSection("Farmeo");
---Teleporter
 local Teleport = Window:NewTab("Teleporting");
 local TeleportSection = Teleport:NewSection("Teleporter");
---Autostats
 local Statsmain = Window:NewTab("Stats");
 local StatsmainSection = Tab:NewSection("StatsMenu");
---Self Menu
 local Self = Window:NewTab("SelfMenu");
 local SelfSection = Self:NewSection("Self Main");
---Options
 local Options = Window:NewTab("Options")
 local OptionsSection = Options:NewSection("Option");
---Menu
 local Target = Window:NewTab("Player Menu");
 local TargetSection = Target:NewSection("Matanza");
---KeyBind Menu
 local K = Window:NewTab("KeyBind")
 local KSection = K:NewSection("KeyBind Main");
---Scripts
 local Scripts = Window:NewTab("Scripts");
 local Scripts = Scripts:NewSection("Scripting");
 _G.CToggle = false;
@@ -102,7 +94,6 @@ GetList = function()
 		table.insert(dropdown, PLR);
 	end
 end;
---AUTO FARMEO MENU 
 AutofarmSection:NewButton("AutoFarmOrb", "Recoge todos los puntos de XP del mapa", function()
 	if state then
 		getgenv().OrbFarm = true;
@@ -274,7 +265,6 @@ AutofarmSection:NewButton("Matones Farm", "Matar todos los Matones", function()
 		end);
 	end
 end);
---Teletransporte Menu
 TeleportSection:NewButton("Bar", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 1000, 149);
@@ -459,7 +449,6 @@ TeleportSection:NewButton("CuevaSecreta", "", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(269, -59, 2729);
 	breakvelocity();
 end);
---STATS MENU
 StatsmainSection:NewDropdown("AutoStats", "", {"vitality","healing","strength","energy","flight","speed","climbing","swinging","fireball","frost","lightning","power","telekinesis","shield","laserVision","metalSkin"}, function(currentOption)
 	selectedstat = currentOption;
 end);
@@ -478,7 +467,6 @@ StatsmainSection:NewToggle("Toggle AutoStats", "", function(state)
 		end);
 	end
 end);
---SELF MENU
 SelfSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
 		getgenv().Deathcheck = true;
@@ -1330,7 +1318,6 @@ TargetSection:NewToggle("Desactivar Agarre", "", function(state)
 		end
 	end);
 end);
---KeyBind Menu
 KSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 	if (_G.metalskin == false) then
 		game:GetService("ReplicatedStorage").Events.Transform:FireServer("metalSkin", true);
@@ -1394,7 +1381,7 @@ KSection:NewKeybind("TelekinesisMuerte", "", Enum.KeyCode['G'], function()
 			end
 		end
 	end);
-end);
+end)
 KSection:NewKeybind("LiberarAgarre", "", Enum.KeyCode['C'], function()
 	plrlist = {};
 	Players = game:GetService("Players");
@@ -1403,10 +1390,15 @@ KSection:NewKeybind("LiberarAgarre", "", Enum.KeyCode['C'], function()
 			game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[player.Name].Character);
 		end);
 	end
-end);
+end)
 KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
+ScriptsSection:NewButton("Manzana V2", "" , function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/NiggasPetes", true))()
+end)ScriptsSection:NewButton("Caminar por  la pared", "" , function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r", true))()
+end)
 local AutofarmSection = Tab:NewSection("Soy turbo y M + Turbo");
 local TeleportSection = TargetTab:NewSection("Soy turbo y M + Turbo");
 local StatsmainSection = STab:NewSection("Soy turbo y M + Turbo");
