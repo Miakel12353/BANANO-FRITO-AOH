@@ -1,11 +1,11 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Turbo Boss 3", "GrapeTheme");
+local Window = Library.CreateLib("Turbo Boss 3", "Sentinel");
 
 --AutoFarm
-local Autofarm = Window:NewTab("Farming Menu");
-local AutofarmSection = Autofarm:NewSection("Farmeo");
+local AutofarmTab = Window:NewTab("Farming Menu");
+local AutofarmSection = AutofarmTab:NewSection("Farmeo");
 
-AutofarmSection:NewToggle("AutoFarmOrb", "Recoge todos los puntos de XP del mapa", function()
+AutofarmSection:NewToggle("AutoFarmOrb", "Recoge todos los puntos de XP del mapa", function(state)
 	if state then
 		getgenv().OrbFarm = true;
 		repeat
@@ -25,7 +25,7 @@ AutofarmSection:NewToggle("AutoFarmOrb", "Recoge todos los puntos de XP del mapa
 		end);
 	end
 end);
-AutofarmSection:NewToggle("LaserCivililesFarm", "Rayos laser hacia la multitud de civiles", function()
+AutofarmSection:NewToggle("LaserCivililesFarm", "Rayos laser hacia la multitud de civiles", function(state)
 	if state then
 		getgenv().LaserC = true;
 		coroutine.resume(coroutine.create(function()
@@ -49,7 +49,7 @@ AutofarmSection:NewToggle("LaserCivililesFarm", "Rayos laser hacia la multitud d
 		breakvelocity();
 	end
 end);
-AutofarmSection:NewToggle("LaserPoliciaFarm", "Rayos laser hacia la multitud de policias", function()
+AutofarmSection:NewToggle("LaserPoliciaFarm", "Rayos laser hacia la multitud de policias", function(state)
 	if state then
 		getgenv().LaserV = true;
 		coroutine.resume(coroutine.create(function()
@@ -73,7 +73,7 @@ AutofarmSection:NewToggle("LaserPoliciaFarm", "Rayos laser hacia la multitud de 
 		breakvelocity();
 	end
 end);
-AutofarmSection:NewToggle("LaserMatonesFarm", "Rayos laser hacia la multitud de matones", function()
+AutofarmSection:NewToggle("LaserMatonesFarm", "Rayos laser hacia la multitud de matones", function(state)
 	if state then
 		getgenv().LaserH = true;
 		coroutine.resume(coroutine.create(function()
@@ -97,7 +97,7 @@ AutofarmSection:NewToggle("LaserMatonesFarm", "Rayos laser hacia la multitud de 
 		breakvelocity();
 	end
 end);
-AutofarmSection:NewToggle("Civiles Farm", "Matar todos los civiles", function()
+AutofarmSection:NewToggle("Civiles Farm", "Matar todos los civiles", function(state)
 	if state then
 		CivilianX = player.Character.HumanoidRootPart.Position['X'];
 		CivilianY = player.Character.HumanoidRootPart.Position['Y'];
@@ -123,7 +123,7 @@ AutofarmSection:NewToggle("Civiles Farm", "Matar todos los civiles", function()
 		end);
 	end
 end);
-AutofarmSection:NewToggle("Policias Farm", "Matar todos los policias", function()
+AutofarmSection:NewToggle("Policias Farm", "Matar todos los policias", function(state)
 	if state then
 		PoliceX = player.Character.HumanoidRootPart.Position['X'];
 		PoliceY = player.Character.HumanoidRootPart.Position['Y'];
@@ -150,7 +150,7 @@ AutofarmSection:NewToggle("Policias Farm", "Matar todos los policias", function(
 		end);
 	end
 end);
-AutofarmSection:NewToggle("Matones Farm", "Matar todos los Matones", function()
+AutofarmSection:NewToggle("Matones Farm", "Matar todos los Matones", function(state)
 	if state then
 		thugX = player.Character.HumanoidRootPart.Position['X'];
 		thugY = player.Character.HumanoidRootPart.Position['Y'];
@@ -177,9 +177,16 @@ AutofarmSection:NewToggle("Matones Farm", "Matar todos los Matones", function()
 	end
 end);
 --Teleport
-local Teleport = Window:NewTab("Teleporting");
-local TeleportSection = Teleport:NewSection("Teleporter");
+local TeleportTab = Window:NewTab("Teleporting");
+local TeleportSection = TeleportTab:NewSection("Teleporter");
 
+TSection:NewToggle("ModoTraer", "", function(state)
+	if state then
+		_G.bring = true;
+	else
+		_G.bring = false;
+	end
+end);
 TeleportSection:NewButton("Bar", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 1000, 149);
@@ -365,8 +372,8 @@ TeleportSection:NewButton("CuevaSecreta", "", function()
 	breakvelocity();
 end);
 --AutoStats
-local Stat = Window:NewTab("Stat Menu");
-local StatSection = Stat:NewSection("StatsMenu");
+local StatTab = Window:NewTab("Stat Menu");
+local StatSection = StatTab:NewSection("StatsMenu");
 
 StatSection:NewDropdown("AutoStats", "", {"vitality","healing","strength","energy","flight","speed","climbing","swinging","fireball","frost","lightning","power","telekinesis","shield","laserVision","metalSkin"}, function(currentOption)
 	selectedstat = currentOption;
@@ -387,10 +394,10 @@ StatSection:NewToggle("Toggle AutoStats", "", function(state)
 	end
 end);
 --Self Menu
-local Self = Window:NewTab("Self Menu");
-local SelfSection = Self:NewSection("Codificación");
+local CodigoTab = Window:NewTab("Self Menu");
+local CodigoSection = CodigoTab:NewSection("Codificación");
 
-SelfSection:NewToggle("PuntoDeAparición", "", function(state)
+CodigoSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
 		getgenv().Deathcheck = true;
 		local varX = player.Character.UpperTorso.Position['X'];
@@ -412,7 +419,7 @@ SelfSection:NewToggle("PuntoDeAparición", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("PuñoRapido", "", function(state)
+CodigoSection:NewToggle("PuñoRapido", "", function(state)
 	if state then
 		getgenv().rapid = true;
 		local UserInputService = game:GetService("UserInputService");
@@ -444,7 +451,7 @@ SelfSection:NewToggle("PuñoRapido", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("PuñoPesadoRapido", "", function(state)
+CodigoSection:NewToggle("PuñoPesadoRapido", "", function(state)
 	if state then
 		getgenv().Hrapid = true;
 		local UserInputService = game:GetService("UserInputService");
@@ -474,7 +481,7 @@ SelfSection:NewToggle("PuñoPesadoRapido", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("SuperPuñoRápido", "", function(state)
+CodigoSection:NewToggle("SuperPuñoRápido", "", function(state)
 	if state then
 		getgenv().superrapid = true;
 		local UserInputService = game:GetService("UserInputService");
@@ -607,7 +614,7 @@ getRoot = function(char)
 	return rootPart;
 end;
 Players = game:GetService("Players");
-SelfSection:NewButton("Name Esp", "", function()
+CodigoSection:NewButton("Name Esp", "", function()
 	local esp_settings = {textsize=20};
 	local gui = Instance.new("BillboardGui");
 	local esp = Instance.new("TextLabel", gui);
@@ -635,7 +642,7 @@ SelfSection:NewButton("Name Esp", "", function()
 		end
 	end);
 end);
-SelfSection:NewToggle("Immortal", "", function(state)
+CodigoSection:NewToggle("Immortal", "", function(state)
 	if state then
 		local varX = player.Character.UpperTorso.Position['X'];
 		local varY = player.Character.UpperTorso.Position['Y'];
@@ -655,7 +662,7 @@ SelfSection:NewToggle("Immortal", "", function(state)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
 	end
 end);
-SelfSection:NewToggle("Invisibilidad", "", function(state)
+CodigoSection:NewToggle("Invisibilidad", "", function(state)
 	if state then
 		local varX = player.Character.UpperTorso.Position['X'];
 		local varY = player.Character.UpperTorso.Position['Y'];
@@ -674,7 +681,7 @@ SelfSection:NewToggle("Invisibilidad", "", function(state)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
 	end
 end);
-SelfSection:NewToggle("Ocultar título GUI", "", function(state)
+CodigoSection:NewToggle("Ocultar título GUI", "", function(state)
 	if state then
 		getgenv().hide = true;
 		while hide do
@@ -692,7 +699,7 @@ SelfSection:NewToggle("Ocultar título GUI", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("AntiAgarre", "", function(state)
+CodigoSection:NewToggle("AntiAgarre", "", function(state)
 	if state then
 		getgenv().localtele = true;
 		spawn(function()
@@ -707,7 +714,7 @@ SelfSection:NewToggle("AntiAgarre", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("TelekinesisParaArrojar", "", function(state)
+CodigoSection:NewToggle("TelekinesisParaArrojar", "", function(state)
 	if state then
 		getgenv().telesauras = true;
 		while telesauras do
@@ -723,7 +730,7 @@ SelfSection:NewToggle("TelekinesisParaArrojar", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("TpSeguro", "", function(state)
+CodigoSection:NewToggle("TpSeguro", "", function(state)
 	if state then
 		local player1 = game.Players.LocalPlayer.Character.Humanoid.Health;
 		local math = player1 / 3;
@@ -744,7 +751,7 @@ SelfSection:NewToggle("TpSeguro", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("Anti-Empuje", "", function(state)
+CodigoSection:NewToggle("Anti-Empuje", "", function(state)
 	if state then
 		getgenv().AntiKnockback = true;
 		while AntiKnockback do
@@ -766,7 +773,7 @@ SelfSection:NewToggle("Anti-Empuje", "", function(state)
 		end);
 	end
 end);
-SelfSection:NewToggle("Anchor Root Part", "", function(state)
+CodigoSection:NewToggle("Anchor Root Part", "", function(state)
 	if state then
 		player.Character.HumanoidRootPart.Anchored = true;
 	else
@@ -774,8 +781,8 @@ SelfSection:NewToggle("Anchor Root Part", "", function(state)
 	end
 end);
 --Options
-local Option = Window:NewTab("Options Menu");
-local OptionSection = Options:NewSection("Configuraciones secundarias");
+local OptionTab = Window:NewTab("Options Menu");
+local OptionSection = OptionTab:NewSection("Configuraciones secundarias");
 
 OptionSection:NewSlider("Velocidad", "", 1500, 16, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s;
@@ -913,8 +920,8 @@ local Target = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, fun
 	end);
 end);
 --PlayerTarget
-local Target = Window:NewTab("Player Menu");
-local TargetSection = Target:NewSection("Mata Gays");
+local TargetTab = Window:NewTab("Player Menu");
+local TargetSection = TargetTab:NewSection("Mata Gays");
 
 TargetSection:NewButton("Actualizar", "", function()
 	spawn(function()
@@ -1250,8 +1257,8 @@ TargetSection:NewToggle("Desactivar Agarre", "", function(state)
 	end);
 end);
 --Keybind
-local Keybind = Window:NewTab("KeyBind Menu")
-local KeybindSection = Keybind:NewSection("Usa un keyboard para poder usar esta mielda");
+local KeybindTab = Window:NewTab("KeyBind Menu")
+local KeybindSection = KeybindTab:NewSection("Usa un keyboard para poder usar esta mielda");
 
 KeybindSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 	if (_G.metalskin == false) then
@@ -1330,8 +1337,8 @@ KeybindSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
 --Scripts
-local Scripts = Window:NewTab("Scripts");
-local Scripts = Scripts:NewSection("Scripting");
+local ScriptsTab = Window:NewTab("Scripts Menu");
+local Scripts = ScriptsTab:NewSection("Scripting");
 
 ScriptsSection:NewButton("Manzana V2", "" , function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/NiggasPetes", true))()
