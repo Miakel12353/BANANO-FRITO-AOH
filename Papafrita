@@ -26,7 +26,7 @@ local TargetTab = Window:NewTab("Player Menu");
 local TargetSection = TargetTab:NewSection("Player Menu");
 local STab = Window:NewTab("Self Menu");
 local SSection = STab:NewSection("Self Menu");
-local OptTab = Window:NewTab("Options")
+local Opt = Window:NewTab("Options")
 local OptSection = Tab:NewSection("Options")
 local StatTab = Window:NewTab("AutoStat Menu");
 local StatSection = StatTab:NewSection("AutoStat Menu");
@@ -1228,6 +1228,47 @@ OptSection:NewToggle("Energy INF", "", function(state)
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/Key%20syst'),true))()
 	end
 end)
+OptSection:NewToggle("Kill Aura", "", function(state)
+	if state then
+		getgenv().Kill_A = true;
+		spawn(function()
+			while killplr do
+				task.wait();
+				task.wait();
+				task.wait();
+				task.wait();
+				task.wait();
+				task.wait();
+				spawn(function()
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+					game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+				end);
+				spawn(function()
+					if (killplr == false) then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
+					end
+				end);
+			end
+		end);
+	else
+		spawn(function()
+			getgenv().breakv = false;
+			wait(0.2);
+			getgenv().killplr = false;
+			wait(0.1);
+			getgenv().killplr = true;
+			breakvelocity();
+		end);
+	end
+end);
 TargetSection:NewToggle("Kill Aura", "", function(state)
 	if state then
 		getgenv().Kill_A = true;
