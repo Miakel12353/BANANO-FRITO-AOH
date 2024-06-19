@@ -2,8 +2,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Turbo Boss 3", "Sentinel");
 
 --AutoFarm
-local AutofarmTab = Window:NewTab("Farming Menu");
-local AutofarmSection = AutofarmTab:NewSection("Farmeo");
+local Autofarm = Window:NewTab("Farming Menu");
+local AutofarmSection = Autofarm:NewSection("Farmeo");
 
 AutofarmSection:NewToggle("AutoFarmOrb", "Recoge todos los puntos de XP del mapa", function(state)
 	if state then
@@ -177,8 +177,8 @@ AutofarmSection:NewToggle("Matones Farm", "Matar todos los Matones", function(st
 	end
 end);
 --Teleport
-local TeleportTab = Window:NewTab("Teleporting");
-local TeleportSection = TeleportTab:NewSection("Teleporter");
+local Teleport = Window:NewTab("Teleporting");
+local TeleportSection = Teleport:NewSection("Teleporter");
 
 TSection:NewToggle("ModoTraer", "", function(state)
 	if state then
@@ -372,8 +372,8 @@ TeleportSection:NewButton("CuevaSecreta", "", function()
 	breakvelocity();
 end);
 --AutoStats
-local StatTab = Window:NewTab("Stat Menu");
-local StatSection = StatTab:NewSection("StatsMenu");
+local Stat = Window:NewTab("Stat Menu");
+local StatSection = Stat:NewSection("StatsMenu");
 
 StatSection:NewDropdown("AutoStats", "", {"vitality","healing","strength","energy","flight","speed","climbing","swinging","fireball","frost","lightning","power","telekinesis","shield","laserVision","metalSkin"}, function(currentOption)
 	selectedstat = currentOption;
@@ -394,8 +394,8 @@ StatSection:NewToggle("Toggle AutoStats", "", function(state)
 	end
 end);
 --Self Menu
-local CodigoTab = Window:NewTab("Self Menu");
-local CodigoSection = CodigoTab:NewSection("Codificación");
+local Codigo = Window:NewTab("Self Menu");
+local CodigoSection = Codigo:NewSection("Codificación");
 
 CodigoSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
@@ -781,8 +781,8 @@ CodigoSection:NewToggle("Anchor Root Part", "", function(state)
 	end
 end);
 --Options
-local OptionTab = Window:NewTab("Options Menu");
-local OptionSection = OptionTab:NewSection("Configuraciones secundarias");
+local Option = Window:NewTab("Options Menu");
+local OptionSection = Option:NewSection("Configuraciones secundarias");
 
 OptionSection:NewSlider("Velocidad", "", 1500, 16, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s;
@@ -920,8 +920,8 @@ local Target = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, fun
 	end);
 end);
 --PlayerTarget
-local TargetTab = Window:NewTab("Player Menu");
-local TargetSection = TargetTab:NewSection("Mata Gays");
+local Target = Window:NewTab("Player Menu");
+local TargetSection = Target:NewSection("Mata Gays");
 
 TargetSection:NewButton("Actualizar", "", function()
 	spawn(function()
@@ -1257,8 +1257,8 @@ TargetSection:NewToggle("Desactivar Agarre", "", function(state)
 	end);
 end);
 --Keybind
-local KeybindTab = Window:NewTab("KeyBind Menu")
-local KeybindSection = KeybindTab:NewSection("Usa un keyboard para poder usar esta mielda");
+local Keybind = Window:NewTab("KeyBind Menu")
+local KeybindSection = Keybind:NewSection("Usa un keyboard para poder usar esta mielda");
 
 KeybindSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 	if (_G.metalskin == false) then
@@ -1337,8 +1337,8 @@ KeybindSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
 --Scripts
-local ScriptsTab = Window:NewTab("Scripts Menu");
-local Scripts = ScriptsTab:NewSection("Scripting");
+local Script = Window:NewTab("Scripts Menu");
+local Script = Scripts:NewSection("Scripting");
 
 ScriptsSection:NewButton("Manzana V2", "" , function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/NiggasPetes", true))()
