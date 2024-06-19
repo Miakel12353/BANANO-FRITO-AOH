@@ -1,65 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Turbo Boss 3", "GrapeTheme");
 
-_G.CToggle = false;
-_G.metalskin = false;
-_G.LOCALPLAYER = game.Players.LocalPlayer.Name;
-_G.bring = false;
-player = game.Players.LocalPlayer;
-breakvelocity = function()
-	spawn(function()
-		local BeenASecond, V3 = false, Vector3.new(0, 0, 0);
-		delay(1, function()
-			BeenASecond = true;
-		end);
-		while not BeenASecond do
-			for _, v in ipairs(player.Character:GetDescendants()) do
-				if v.IsA(v, "BasePart") then
-					v.Velocity, v.RotVelocity = V3, V3;
-				end
-			end
-			wait();
-		end
-	end);
-end;
-plrlist = {};
-plrnum = 0;
-getNearPlayer = function(maxDistance)
-	pcall(function()
-		if (player and player.Character) then
-			local playerLocation = player.Character.HumanoidRootPart.Position;
-			for i, v in pairs(game.Players:GetChildren()) do
-				if (v.Character and (v.Character.Health ~= 0)) then
-					local location = v.Character.HumanoidRootPart.Position;
-					if (((location - playerLocation).Magnitude <= maxDistance) and (v.Character.Health ~= 0)) then
-						pcall(function()
-							if (v == player) then
-							else
-								local teleexist = game:GetService("Workspace")[v.Name].HumanoidRootPart;
-								if (not teleexist:FindFirstChild("telekinesisPosition") and (v.Character.Health ~= 0)) then
-								elseif (v ~= player) then
-									plrnum += 1
-									table.insert(plrlist, v.Character);
-								end
-							end
-						end);
-					end
-				end
-			end
-		end
-	end);
-end;
-GetList = function()
-	x = 1;
-	Plyr = game.Players:GetPlayers();
-	dropdown = {};
-	for value in pairs(Plyr) do
-		PLR = Plyr[x].Name;
-		x += 1
-		table.insert(dropdown, PLR);
-	end
-end;
-
 --AutoFarm
 local Autofarm = Window:NewTab("Farming Menu");
 local AutofarmSection = Autofarm:NewSection("Farmeo");
@@ -430,7 +371,7 @@ local StatSection = Stat:NewSection("StatsMenu");
 StatSection:NewDropdown("AutoStats", "", {"vitality","healing","strength","energy","flight","speed","climbing","swinging","fireball","frost","lightning","power","telekinesis","shield","laserVision","metalSkin"}, function(currentOption)
 	selectedstat = currentOption;
 end);
-StatsSection:NewToggle("Toggle AutoStats", "", function(state)
+StatSection:NewToggle("Toggle AutoStats", "", function(state)
 	if state then
 		getgenv().AutoStats = true;
 		while AutoStats do
@@ -447,7 +388,7 @@ StatsSection:NewToggle("Toggle AutoStats", "", function(state)
 end);
 --Self Menu
 local Self = Window:NewTab("Self Menu");
-local SelfSection = Self:NewSection("Self");
+local SelfSection = Self:NewSection("Codificación");
 
 SelfSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
@@ -833,21 +774,21 @@ SelfSection:NewToggle("Anchor Root Part", "", function(state)
 	end
 end);
 --Options
-local Options = Window:NewTab("Options Menu");
-local OptionsSection = Options:NewSection("Option");
+local Option = Window:NewTab("Options Menu");
+local OptionSection = Options:NewSection("Configuraciones secundarias");
 
-OptionsSection:NewSlider("Velocidad", "", 1500, 16, function(s)
+OptionSection:NewSlider("Velocidad", "", 1500, 16, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s;
 end);
-OptionsSection:NewSlider("Salto", "", 350, 50, function(s)
+OptionSection:NewSlider("Salto", "", 350, 50, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.JumpPower = s;
 end);
-OptionsSection:NewButton("Salto inf", "", function()
+OptionSection:NewButton("Salto inf", "", function()
 	game:GetService("UserInputService").JumpRequest:connect(function()
 		game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping");
 	end);
 end);
-OptionsSection:NewButton("DestruyeZonaSeguraPartes", "", function()
+OptionSection:NewButton("DestruyeZonaSeguraPartes", "", function()
 	game:GetService("Workspace").City.Buildings:Destroy();
 	game:GetService("Workspace").City.Interactive.Bank.Model:Destroy();
 	game:GetService("Workspace").City.Interactive["Police Station"]:GetChildren()[28]:Destroy();
@@ -868,7 +809,7 @@ OptionsSection:NewButton("DestruyeZonaSeguraPartes", "", function()
 	game:GetService("Workspace").SafeZones.Barrier:Destroy();
 	game:GetService("Workspace").SafeZones.Barrier:Destroy();
 end);
-OptionsSection:NewButton("Quitar Lag", "", function()
+OptionSection:NewButton("Quitar Lag", "", function()
 	local Terrain = workspace:FindFirstChildOfClass("Terrain");
 	Terrain.WaterWaveSize = 0;
 	Terrain.WaterWaveSpeed = 0;
@@ -903,12 +844,12 @@ OptionsSection:NewButton("Quitar Lag", "", function()
 		end)();
 	end);
 end);
-OptionsSection:NewButton("Crash Grande", "", function(state)
+OptionSection:NewButton("Crash Grande", "", function(state)
 	for i = 1, 1000 do
 		game:GetService("ReplicatedStorage").Events.GroundCrack:FireServer();
 	end
 end);
-OptionsSection:NewButton("Mini Crash", "", function(state)
+OptionSection:NewButton("Mini Crash", "", function(state)
 	local x = 0;
 	repeat
 		x += 1
@@ -918,7 +859,7 @@ OptionsSection:NewButton("Mini Crash", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-OptionsSection:NewButton("Crash Danger", "", function(state)
+OptionSection:NewButton("Crash Danger", "", function(state)
 	local x = 0;
 	repeat
 		x += 1
@@ -928,7 +869,7 @@ OptionsSection:NewButton("Crash Danger", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-OptionsSection:NewButton("DESTRUCTOR", "", function(state)
+OptionSection:NewButton("DESTRUCTOR", "", function(state)
 	local x = 0;
 	repeat
 		x += 4
@@ -948,7 +889,7 @@ OptionsSection:NewButton("Server Crasher", "", function(state)
 	wait(0.2);
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-OptionsSection:NewButton("Crash Maldito", "", function(state)
+OptionSection:NewButton("Crash Maldito", "", function(state)
 	local x = 0;
 	repeat
 		x += 8
@@ -958,14 +899,14 @@ OptionsSection:NewButton("Crash Maldito", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-OptionsSection:NewButton("Break Velocity", "", function()
+OptionSection:NewButton("Break Velocity", "", function()
 	breakvelocity();
 end);
-OptionsSection:NewButton("Reset", "", function()
+OptionSection:NewButton("Reset", "", function()
 	player.Character:BreakJoints();
 end);
 GetList();
-local slcplr = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, function(currentOption)
+local Target = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, function(currentOption)
 	spawn(function()
 		_G.tplayer = currentOption;
 		getgenv().confirm = true;
@@ -1309,10 +1250,10 @@ TargetSection:NewToggle("Desactivar Agarre", "", function(state)
 	end);
 end);
 --Keybind
-local K = Window:NewTab("KeyBind")
-local KSection = K:NewSection("KeyBind Main");
+local Keybind = Window:NewTab("KeyBind Menu")
+local KeybindSection = Keybind:NewSection("Usa un keyboard para poder usar esta mielda");
 
-KSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
+KeybindSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 	if (_G.metalskin == false) then
 		game:GetService("ReplicatedStorage").Events.Transform:FireServer("metalSkin", true);
 		_G.metalskin = true;
@@ -1321,7 +1262,7 @@ KSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 		_G.metalskin = false;
 	end
 end);
-KSection:NewKeybind("LlevarJugador", "", Enum.KeyCode['H'], function()
+KeybindSection:NewKeybind("LlevarJugador", "", Enum.KeyCode['H'], function()
 	if (_G.CToggle == false) then
 		spawn(function()
 			getNearPlayer(99);
@@ -1351,14 +1292,14 @@ KSection:NewKeybind("LlevarJugador", "", Enum.KeyCode['H'], function()
 		end);
 	end
 end);
-KSection:NewKeybind("AgarreBloqueado", "", Enum.KeyCode['T'], function()
+KeybindSection:NewKeybind("AgarreBloqueado", "", Enum.KeyCode['T'], function()
 	spawn(function()
 		local LookVector = game.Workspace.Camera.CFrame.LookVector;
 		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
 		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
 	end);
 end);
-KSection:NewKeybind("TelekinesisMuerte", "", Enum.KeyCode['G'], function()
+KeybindSection:NewKeybind("TelekinesisMuerte", "", Enum.KeyCode['G'], function()
 	spawn(function()
 		getNearPlayer(99);
 		for i, v in pairs(plrlist) do
@@ -1376,7 +1317,7 @@ KSection:NewKeybind("TelekinesisMuerte", "", Enum.KeyCode['G'], function()
 		end
 	end);
 end)
-KSection:NewKeybind("LiberarAgarre", "", Enum.KeyCode['C'], function()
+KeybindSection:NewKeybind("LiberarAgarre", "", Enum.KeyCode['C'], function()
 	plrlist = {};
 	Players = game:GetService("Players");
 	for i, player in pairs(Players:GetPlayers()) do
@@ -1385,7 +1326,7 @@ KSection:NewKeybind("LiberarAgarre", "", Enum.KeyCode['C'], function()
 		end);
 	end
 end)
-KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
+KeybindSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
 --Scripts
@@ -1398,6 +1339,65 @@ end);
 ScriptsSection:NewButton("Caminar por  la pared", "" , function()
         loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r", true))()
 end);
+
+_G.CToggle = false;
+_G.metalskin = false;
+_G.LOCALPLAYER = game.Players.LocalPlayer.Name;
+_G.bring = false;
+player = game.Players.LocalPlayer;
+breakvelocity = function()
+	spawn(function()
+		local BeenASecond, V3 = false, Vector3.new(0, 0, 0);
+		delay(1, function()
+			BeenASecond = true;
+		end);
+		while not BeenASecond do
+			for _, v in ipairs(player.Character:GetDescendants()) do
+				if v.IsA(v, "BasePart") then
+					v.Velocity, v.RotVelocity = V3, V3;
+				end
+			end
+			wait();
+		end
+	end);
+end;
+plrlist = {};
+plrnum = 0;
+getNearPlayer = function(maxDistance)
+	pcall(function()
+		if (player and player.Character) then
+			local playerLocation = player.Character.HumanoidRootPart.Position;
+			for i, v in pairs(game.Players:GetChildren()) do
+				if (v.Character and (v.Character.Health ~= 0)) then
+					local location = v.Character.HumanoidRootPart.Position;
+					if (((location - playerLocation).Magnitude <= maxDistance) and (v.Character.Health ~= 0)) then
+						pcall(function()
+							if (v == player) then
+							else
+								local teleexist = game:GetService("Workspace")[v.Name].HumanoidRootPart;
+								if (not teleexist:FindFirstChild("telekinesisPosition") and (v.Character.Health ~= 0)) then
+								elseif (v ~= player) then
+									plrnum += 1
+									table.insert(plrlist, v.Character);
+								end
+							end
+						end);
+					end
+				end
+			end
+		end
+	end);
+end;
+GetList = function()
+	x = 1;
+	Plyr = game.Players:GetPlayers();
+	dropdown = {};
+	for value in pairs(Plyr) do
+		PLR = Plyr[x].Name;
+		x += 1
+		table.insert(dropdown, PLR);
+	end
+end;
 local AutofarmSection = Tab:NewSection("Soy turbo y M + Turbo");
 local TeleportSection = TargetTab:NewSection("Soy turbo y M + Turbo");
 local StatsmainSection = STab:NewSection("Soy turbo y M + Turbo");
