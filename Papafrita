@@ -1269,6 +1269,79 @@ OptSection:NewToggle("Kill Aura", "", function(state)
 		end);
 	end
 end);
+OptSection:NewToggle("Telekinesis Muerte", "", function(state)
+	spawn(function()
+		getNearPlayer(99);
+		for i, v in pairs(plrlist) do
+			if (v == player) then
+			else
+				spawn(function()
+					v.Head.Neck:Destroy();
+					plrlist = {};
+					wait(0.2);
+					spawn(function()
+						game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
+					end);
+				end);
+			end
+		end
+	end);
+end);
+OptSection:NewToggle("Metal Skin", "", function(state)
+	if (_G.metalskin == false) then
+		game:GetService("ReplicatedStorage").Events.Transform:FireServer("metalSkin", true);
+		_G.metalskin = true;
+	else
+		game:GetService("ReplicatedStorage").Events.Transform:FireServer("metalSkin", false);
+		_G.metalskin = false;
+	end
+end);
+OptSection:NewToggle("Llevarte un jugador", "", function(state)
+	if (_G.CToggle == false) then
+		spawn(function()
+			getNearPlayer(99);
+			wait();
+			_G.CToggle = true;
+			getgenv().CarryP = true;
+			while CarryP do
+				wait();
+				spawn(function()
+					for i, v in pairs(plrlist) do
+						if (v == player) then
+						else
+							Xt = player.Character.HumanoidRootPart.Position['X'];
+							Yt = player.Character.HumanoidRootPart.Position['Y'];
+							Zt = player.Character.HumanoidRootPart.Position['Z'];
+							game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition.Position = Vector3.new(Xt, Yt + 8, Zt + 5);
+						end
+					end
+				end);
+			end
+		end);
+	else
+		spawn(function()
+			_G.CToggle = false;
+			plrlist = {};
+			getgenv().CarryP = false;
+		end);
+	end
+end);
+OptSection:NewToggle("Agarrar y dejar flotando", "", function(state)
+	spawn(function()
+		local LookVector = game.Workspace.Camera.CFrame.LookVector;
+		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
+		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
+	end);
+end);
+OptSection:NewToggle("Liberar del agarre", "", function(state)
+	plrlist = {};
+	Players = game:GetService("Players");
+	for i, player in pairs(Players:GetPlayers()) do
+		spawn(function()
+			game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[player.Name].Character);
+		end);
+	end
+end);
 TargetSection:NewToggle("Kill Aura", "", function(state)
 	if state then
 		getgenv().Kill_A = true;
