@@ -1,41 +1,6 @@
---[[
-
-🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-🟨🟨🟨🟨🟨🟨
-
-
-Made By BANANO                                                  
-Open Source :D      
-
-ToDo List {
-better esp with health bar or something
-add pcalls and shit
-disable everyones colision for antifling :shrug:
-perhaps a teleport player to fuck the bring mode 
-make farms actually afkable
-}                                                   
-]]--
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Turbo Boss 3", "Ocean");
-local Autofarm = Window:NewTab("Farming");
-local AutofarmSection = Autofarm:NewSection("Farmeo");
-local Teleport = Window:NewTab("Teleporting");
-local TeleportSection = Teleport:NewSection("Teleporter");
-local Statsmain = Window:NewTab("Stats");
-local StatsmainSection = Tab:NewSection("StatsMenu");
-local Self = Window:NewTab("SelfMenu");
-local SelfSection = Self:NewSection("Self Main");
-local Options = Window:NewTab("Options")
-local OptionsSection = Options:NewSection("Option");
-local Target = Window:NewTab("Player Menu");
-local TargetSection = Target:NewSection("Matanza");
-local K = Window:NewTab("KeyBind")
-local KSection = K:NewSection("KeyBind Main");
-local Scripts = Window:NewTab("Scripts");
-local Scripts = Scripts:NewSection("Scripting");
+local Window = Library.CreateLib("Turbo Boss 3", "BloodTheme");
+
 _G.CToggle = false;
 _G.metalskin = false;
 _G.LOCALPLAYER = game.Players.LocalPlayer.Name;
@@ -94,6 +59,11 @@ GetList = function()
 		table.insert(dropdown, PLR);
 	end
 end;
+
+local Autofarm = Window:NewTab("Farming");
+local AutofarmSection = Autofarm:NewSection("Farmeo");
+--AutoFarm
+
 AutofarmSection:NewButton("AutoFarmOrb", "Recoge todos los puntos de XP del mapa", function()
 	if state then
 		getgenv().OrbFarm = true;
@@ -113,7 +83,7 @@ AutofarmSection:NewButton("AutoFarmOrb", "Recoge todos los puntos de XP del mapa
 			getgenv().OrbFarm = false;
 		end);
 	end
-end);
+end)
 AutofarmSection:NewButton("LaserCivililesFarm", "Rayos laser hacia la multitud de civiles", function()
 	if state then
 		getgenv().LaserC = true;
@@ -137,7 +107,7 @@ AutofarmSection:NewButton("LaserCivililesFarm", "Rayos laser hacia la multitud d
 		end);
 		breakvelocity();
 	end
-end);
+end)
 AutofarmSection:NewButton("LaserPoliciaFarm", "Rayos laser hacia la multitud de policias", function()
 	if state then
 		getgenv().LaserV = true;
@@ -161,7 +131,7 @@ AutofarmSection:NewButton("LaserPoliciaFarm", "Rayos laser hacia la multitud de 
 		end);
 		breakvelocity();
 	end
-end);
+end)
 AutofarmSection:NewButton("LaserMatonesFarm", "Rayos laser hacia la multitud de matones", function()
 	if state then
 		getgenv().LaserH = true;
@@ -185,7 +155,7 @@ AutofarmSection:NewButton("LaserMatonesFarm", "Rayos laser hacia la multitud de 
 		end);
 		breakvelocity();
 	end
-end);
+end)
 AutofarmSection:NewButton("Civiles Farm", "Matar todos los civiles", function()
 	if state then
 		CivilianX = player.Character.HumanoidRootPart.Position['X'];
@@ -211,7 +181,7 @@ AutofarmSection:NewButton("Civiles Farm", "Matar todos los civiles", function()
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(CivilianX, CivilianY, CivilianZ);
 		end);
 	end
-end);
+end)
 AutofarmSection:NewButton("Policias Farm", "Matar todos los policias", function()
 	if state then
 		PoliceX = player.Character.HumanoidRootPart.Position['X'];
@@ -238,7 +208,7 @@ AutofarmSection:NewButton("Policias Farm", "Matar todos los policias", function(
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PoliceX, PoliceY, PoliceZ);
 		end);
 	end
-end);
+end)
 AutofarmSection:NewButton("Matones Farm", "Matar todos los Matones", function()
 	if state then
 		thugX = player.Character.HumanoidRootPart.Position['X'];
@@ -264,7 +234,11 @@ AutofarmSection:NewButton("Matones Farm", "Matar todos los Matones", function()
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(thugX, thugY, thugZ);
 		end);
 	end
-end);
+end)
+--Teleport
+local Teleport = Window:NewTab("Teleporting");
+local TeleportSection = Teleport:NewSection("Teleporter");
+
 TeleportSection:NewButton("Bar", "", function()
 	if (_G.bring == true) then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 1000, 149);
@@ -449,6 +423,10 @@ TeleportSection:NewButton("CuevaSecreta", "", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(269, -59, 2729);
 	breakvelocity();
 end);
+--AutoStats
+local Statsmain = Window:NewTab("Stats");
+local StatsmainSection = Tab:NewSection("StatsMenu");
+
 StatsmainSection:NewDropdown("AutoStats", "", {"vitality","healing","strength","energy","flight","speed","climbing","swinging","fireball","frost","lightning","power","telekinesis","shield","laserVision","metalSkin"}, function(currentOption)
 	selectedstat = currentOption;
 end);
@@ -467,6 +445,10 @@ StatsmainSection:NewToggle("Toggle AutoStats", "", function(state)
 		end);
 	end
 end);
+--Self Menu
+local Self = Window:NewTab("SelfMenu");
+local SelfSection = Self:NewSection("Self Main");
+
 SelfSection:NewToggle("PuntoDeAparición", "", function(state)
 	if state then
 		getgenv().Deathcheck = true;
@@ -850,6 +832,9 @@ SelfSection:NewToggle("Anchor Root Part", "", function(state)
 		player.Character.HumanoidRootPart.Anchored = false;
 	end
 end);
+--Options
+local Options = Window:NewTab("Options");
+local OptionsSection = Options:NewSection("Option");
 OptionsSection:NewSlider("Velocidad", "", 1500, 16, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s;
 end);
@@ -985,6 +970,10 @@ local slcplr = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, fun
 		getgenv().confirm = true;
 	end);
 end);
+--PlayerTarget
+local Target = Window:NewTab("Player Menu");
+local TargetSection = Target:NewSection("Matanza");
+
 TargetSection:NewButton("Actualizar", "", function()
 	spawn(function()
 		GetList();
@@ -1318,6 +1307,10 @@ TargetSection:NewToggle("Desactivar Agarre", "", function(state)
 		end
 	end);
 end);
+--Keybind
+local K = Window:NewTab("KeyBind")
+local KSection = K:NewSection("KeyBind Main");
+
 KSection:NewKeybind("MetalSkin", "", Enum.KeyCode['R'], function()
 	if (_G.metalskin == false) then
 		game:GetService("ReplicatedStorage").Events.Transform:FireServer("metalSkin", true);
@@ -1394,6 +1387,10 @@ end)
 KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.RightShift, function()
 	Library:ToggleUI();
 end);
+--Scripts
+local Scripts = Window:NewTab("Scripts");
+local Scripts = Scripts:NewSection("Scripting");
+
 ScriptsSection:NewButton("Manzana V2", "" , function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Miakel12353/BANANO-FRITO-AOH/main/NiggasPetes", true))()
 end)ScriptsSection:NewButton("Caminar por  la pared", "" , function()
