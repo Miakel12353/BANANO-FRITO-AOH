@@ -911,16 +911,17 @@ end);
 OptionSection:NewButton("Reset", "", function()
 	player.Character:BreakJoints();
 end);
+--PlayerTarget
+local Target = Window:NewTab("Player Menu");
+local TargetSection = Target:NewSection("Mata Gays");
+
 GetList();
-local Target = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, function(currentOption)
+local slcplr = TargetSection:NewDropdown("Selecciona jugador", "", dropdown, function(currentOption)
 	spawn(function()
 		_G.tplayer = currentOption;
 		getgenv().confirm = true;
 	end);
 end);
---PlayerTarget
-local Target = Window:NewTab("Player Menu");
-local TargetSection = Target:NewSection("Mata Gays");
 
 TargetSection:NewButton("Actualizar", "", function()
 	spawn(function()
