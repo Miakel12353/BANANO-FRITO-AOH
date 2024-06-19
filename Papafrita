@@ -1,6 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Turbo Boss 3", "Synapse");
-
 --AutoFarm
 local Autofarm = Window:NewTab("Farming Menu");
 local AutofarmSection = Autofarm:NewSection("Farmeo");
@@ -180,7 +179,7 @@ end);
 local Teleport = Window:NewTab("Teleporting");
 local TeleportSection = Teleport:NewSection("Teleporter");
 
-TSection:NewToggle("ModoTraer", "", function(state)
+TeleportSection:NewToggle("ModoTraer", "", function(state)
 	if state then
 		_G.bring = true;
 	else
