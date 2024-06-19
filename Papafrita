@@ -19,32 +19,31 @@ make farms actually afkable
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Turbo Boss V3", "Synapse")
-local Tab = Window:NewTab("TabName")
+local Window = Library.CreateLib("Turbo Boss V3", "Synapse");
 --AutoFarmer
-local Autofarm = Window:NewTab("Farming")
-local AutofarmSection = Autofarm:NewSection("Farmeo")
+local Autofarm = Window:NewTab("Farming");
+local AutofarmSection = Autofarm:NewSection("Farmeo");
 --Teleporter
-local Teleport = Window:NewTab("Teleporting")
-local TeleportSection = Teleport:NewSection("Teleporter")
+local Teleport = Window:NewTab("Teleporting");
+local TeleportSection = Teleport:NewSection("Teleporter");
 --Autostats
-local Statsmain = Window:NewTab("Stats")
-local StatsmainSection = Tab:NewSection("StatsMenu")
+local Statsmain = Window:NewTab("Stats");
+local StatsmainSection = Tab:NewSection("StatsMenu");
 --Self Menu
-local Self = Window:NewTab("SelfMenu")
-local SelfSection = Self:NewSection("Self Main")
+local Self = Window:NewTab("SelfMenu");
+local SelfSection = Self:NewSection("Self Main");
 --Options
 local Options = Window:NewTab("Options")
-local OptionsSection = Options:NewSection("Option")
+local OptionsSection = Options:NewSection("Option");
 --Menu
-local Target = Window:NewTab("Player Menu")
-local TargetSection = Target:NewSection("Matanza")
+local Target = Window:NewTab("Player Menu");
+local TargetSection = Target:NewSection("Matanza");
 --KeyBind Menu
 local K = Window:NewTab("KeyBind")
-local KSection = K:NewSection("KeyBind Main")
+local KSection = K:NewSection("KeyBind Main");
 --Scripts
-local Scripts = Window:NewTab("Scripts")
-local Scripts = Scripts:NewSection("Scripting")
+local Scripts = Window:NewTab("Scripts");
+local Scripts = Scripts:NewSection("Scripting");
 _G.CToggle = false;
 _G.metalskin = false;
 _G.LOCALPLAYER = game.Players.LocalPlayer.Name;
