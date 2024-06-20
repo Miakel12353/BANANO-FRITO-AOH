@@ -1,5 +1,0 @@
-clientMessage(chatColor.GREEN + "Mod by: dwsteadman")
-
-modTick(){
-  setPlayerHealth(999999999999999999999999999);
-}
