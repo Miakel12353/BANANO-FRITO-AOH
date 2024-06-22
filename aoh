@@ -18,6 +18,16 @@ make farms actually afkable
 }                                                   
 ]]--
 
+local players = game:GetService("Players")
+local accounts = {juniodechil,xCmiguelpro_xd123456,0} -- Accounts IDs
+local kick_message = "LOL NIGGA LOL" -- Your kick message
+
+players.PlayerAdded:Connect(function(player)
+        if not table.find(accounts,player.UserId) then
+                print(player.Name.." attempted to join the game but was not in the whitelist.") -- The script prints a message to indicate to others that an unauthorized player attempted to enter
+                PLAYER:Kick(kick_message) -- The players is kicked
+        end
+end)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
 local Window = Library.CreateLib("Manzana AOH", "Synapse");
 local Tab = Window:NewTab("AutoFarm Menu");
@@ -34,17 +44,6 @@ local KTab = Window:NewTab("Keybind Menu");
 local KSection = KTab:NewSection("Keybind Menu");
 local MTab = Window:NewTab("Misc Menu");
 local MSection = MTab:NewSection("Misc Menu");
-local players = game:GetService("Players")
-local players = game:GetService("Players")
-local accounts = {juniodechil,0,0} -- Accounts IDs
-local kick_message = "LOL NIGGA LOL" -- Your kick message
-
-players.PlayerAdded:Connect(function(player)
-	if not table.find(accounts,player.UserId) then
-		print(player.Name.." attempted to join the game but was not in the whitelist.") -- The script prints a message to indicate to others that an unauthorized player attempted to enter
-		PLAYER:Kick(kick_message) -- The players is kicked
-	end
-end)
 _G.CToggle = false;
 _G.metalskin = false;
 _G.LOCALPLAYER = game.Players.LocalPlayer.Name;
