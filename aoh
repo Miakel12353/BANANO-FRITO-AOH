@@ -19,7 +19,7 @@ make farms actually afkable
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
-local Window = Library.CreateLib("Manzana AOH", "BloodTheme");
+local Window = Library.CreateLib("Manzana AOH", "Synapse");
 local Tab = Window:NewTab("AutoFarm Menu");
 local MainSection = Tab:NewSection("AutoFarm Menu");
 local TargetTab = Window:NewTab("Player Menu");
@@ -34,7 +34,17 @@ local KTab = Window:NewTab("Keybind Menu");
 local KSection = KTab:NewSection("Keybind Menu");
 local MTab = Window:NewTab("Misc Menu");
 local MSection = MTab:NewSection("Misc Menu");
-_G.energy = math.huge
+local players = game:GetService("Players")
+local players = game:GetService("Players")
+local accounts = {juniodechil,0,0} -- Accounts IDs
+local kick_message = "LOL NIGGA LOL" -- Your kick message
+
+players.PlayerAdded:Connect(function(player)
+	if not table.find(accounts,player.UserId) then
+		print(player.Name.." attempted to join the game but was not in the whitelist.") -- The script prints a message to indicate to others that an unauthorized player attempted to enter
+		PLAYER:Kick(kick_message) -- The players is kicked
+	end
+end)
 _G.CToggle = false;
 _G.metalskin = false;
 _G.LOCALPLAYER = game.Players.LocalPlayer.Name;
@@ -1235,13 +1245,6 @@ TargetSection:NewToggle("Kill Aura", "", function(state)
                                         game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
                                         game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
                                 end);
-                spawn(function()
-                        while energy do
-                                breakvelocity();
-                                getgenv(player.PlayerScripts.GameClient)._G.energy = math.huge
-                                wait(1);
-                        end
-                end);
                                 spawn(function()
                                         if (killplr == false) then
                                                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
