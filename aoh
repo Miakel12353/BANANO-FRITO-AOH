@@ -34,6 +34,7 @@ local KTab = Window:NewTab("Keybind Menu");
 local KSection = KTab:NewSection("Keybind Menu");
 local MTab = Window:NewTab("Misc Menu");
 local MSection = MTab:NewSection("Misc Menu");
+_G.energy = math.huge
 _G.CToggle = false;
 _G.metalskin = false;
 _G.LOCALPLAYER = game.Players.LocalPlayer.Name;
@@ -1234,6 +1235,13 @@ TargetSection:NewToggle("Kill Aura", "", function(state)
                                         game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
                                         game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
                                 end);
+                spawn(function()
+                        while energy do
+                                breakvelocity();
+                                getgenv(player.PlayerScripts.GameClient)._G.energy = math.huge
+                                wait(1);
+                        end
+                end);
                                 spawn(function()
                                         if (killplr == false) then
                                                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
